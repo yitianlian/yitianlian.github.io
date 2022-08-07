@@ -1,107 +1,81 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN" class="loading">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>神经网络初始化指定种子 | 一捧易天莲的碎碎念</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="网络指定种子随机化（使网络可复现def setup_seed(seed):      torch.manual_seed(seed)      torch.cuda.manual_seed_all(seed)      np.random.seed(seed)      random.seed(seed)      torch.backends.cudnn.deterministic &#x3D; True">
-<meta property="og:type" content="article">
-<meta property="og:title" content="神经网络初始化指定种子">
-<meta property="og:url" content="https://yitianlian.github.io/project/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/index.html">
-<meta property="og:site_name" content="一捧易天莲的碎碎念">
-<meta property="og:description" content="网络指定种子随机化（使网络可复现def setup_seed(seed):      torch.manual_seed(seed)      torch.cuda.manual_seed_all(seed)      np.random.seed(seed)      random.seed(seed)      torch.backends.cudnn.deterministic &#x3D; True">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-07T05:28:09.000Z">
-<meta property="article:modified_time" content="2022-08-07T05:35:58.037Z">
-<meta property="article:author" content="yitianlian">
-<meta property="article:tag" content="pytorch">
-<meta property="article:tag" content="random">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="一捧易天莲的碎碎念" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>神经网络初始化指定种子 - 一捧易天莲的碎碎念</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="yitianlian,"> 
+    <meta name="description" content="记录美好生活,网络指定种子随机化（使网络可复现def setup_seed(seed):
+     torch.manual_seed(seed)
+     torch.cuda.manual_seed_all(,"> 
+    <meta name="author" content="yitianlian"> 
+    <link rel="alternative" href="atom.xml" title="一捧易天莲的碎碎念" type="application/atom+xml"> 
+    <link rel="icon" href="/img/bitbug_favicon.ico"> 
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="神经网络初始化指定种子 - 一捧易天莲的碎碎念"/>
+    <meta name="twitter:description" content="记录美好生活,网络指定种子随机化（使网络可复现def setup_seed(seed):
+     torch.manual_seed(seed)
+     torch.cuda.manual_seed_all(,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="一捧易天莲的碎碎念"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="神经网络初始化指定种子 - 一捧易天莲的碎碎念"/>
+    <meta property="og:description" content="记录美好生活,网络指定种子随机化（使网络可复现def setup_seed(seed):
+     torch.manual_seed(seed)
+     torch.cuda.manual_seed_all(,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
-  
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">一捧易天莲的碎碎念</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">yitianlian</a>
-        </h2>
-      
+<body class="loading">
+    <span id="config-title" style="display:none">一捧易天莲的碎碎念</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yitianlian.github.io/project"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">神经网络初始化指定种子</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yitianlian.github.io/project"></form>
-      </div>
-    </div>
-  </div>
-</header>
+    <div class="scrollbar"></div>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-神经网络初始化指定种子" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/" class="article-date">
-  <time class="dt-published" datetime="2022-08-07T05:28:09.000Z" itemprop="datePublished">2022-08-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/deep-learning/">deep learning</a>
-  </div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">神经网络初始化指定种子</h1>
+        <div class="stuff">
+            <span>八月 07, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/pytorch/" rel="tag">pytorch</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/random/" rel="tag">random</a></li></ul>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      神经网络初始化指定种子
-    </h1>
-  
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="网络指定种子随机化（使网络可复现"><a href="#网络指定种子随机化（使网络可复现" class="headerlink" title="网络指定种子随机化（使网络可复现"></a>网络指定种子随机化（使网络可复现</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">setup_seed</span><span class="token punctuation">(</span>seed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        </div>
+        <div class="content markdown">
+            <h1 id="网络指定种子随机化（使网络可复现"><a href="#网络指定种子随机化（使网络可复现" class="headerlink" title="网络指定种子随机化（使网络可复现"></a>网络指定种子随机化（使网络可复现</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">setup_seed</span><span class="token punctuation">(</span>seed<span class="token punctuation">)</span><span class="token punctuation">:</span>
      torch<span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
      torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>manual_seed_all<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
      np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
@@ -112,157 +86,117 @@ setup_seed<span class="token punctuation">(</span><span class="token number">20<
 </code></pre>
 <p>lstm在dropout不为0的时候有问题，不可以复现！</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://yitianlian.github.io/project/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/" data-id="cl6j066vc000mrgtue9yu6yhn" data-title="神经网络初始化指定种子" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/random/" rel="tag">random</a></li></ul>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
 
-    </footer>
-  </div>
-  
+
+    </div>
     
-<nav id="article-nav">
-  
-    <a href="/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          CS231n 课程笔记大纲
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">使用hexo+GitHub构建博客时无法更新的问题</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
+        <div class="side">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90%E9%9A%8F%E6%9C%BA%E5%8C%96%EF%BC%88%E4%BD%BF%E7%BD%91%E7%BB%9C%E5%8F%AF%E5%A4%8D%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">网络指定种子随机化（使网络可复现</span></a></li></ol>
+        </div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li></ul>
-    </div>
-  </div>
+</div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS231n/" rel="tag">CS231n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/building-blog/" rel="tag">building blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-state/" rel="tag">get state</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pytorch/" rel="tag">pytorch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/random/" rel="tag">random</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/CS231n/" style="font-size: 10px;">CS231n</a> <a href="/tags/building-blog/" style="font-size: 10px;">building blog</a> <a href="/tags/get-state/" style="font-size: 10px;">get state</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/tags/random/" style="font-size: 10px;">random</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/">CS231n 课程笔记大纲</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/">神经网络初始化指定种子</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/">使用hexo+GitHub构建博客时无法更新的问题</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/06/Hello-World-0/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/08/06/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 yitianlian<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
 
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>
