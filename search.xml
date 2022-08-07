@@ -2,7 +2,479 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2022/08/06/hello-world/</url>
+    <url>/project/2022/08/06/Hello-World-0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>CS231n 课程笔记大纲</title>
+    <url>/project/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/</url>
+    <content><![CDATA[<h1 id="名词定义"><a href="#名词定义" class="headerlink" title="名词定义"></a>名词定义</h1><h2 id="饱和神经元："><a href="#饱和神经元：" class="headerlink" title="饱和神经元："></a>饱和神经元：</h2><p>饱和神经元(Saturated Neurons) 饱和神经元会使得梯<strong>度消失问题雪上加霜，</strong>假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯度较大，该神经元权重(w)和偏置(bias)的梯度也会趋近于0，导致参数无法得到有效更新。</p>
+<h2 id="dead-relu："><a href="#dead-relu：" class="headerlink" title="dead relu："></a>dead relu：</h2><p>在训练过程中，由于一次梯度更新的幅度过大，导致某些Relu节点的权重调整的太大（让w&lt;0了），使得后续的训练对该节点不再起作用，这个节点相当于永久死亡（永远输出0）了。</p>
+<h2 id="梯度消失"><a href="#梯度消失" class="headerlink" title="梯度消失"></a>梯度消失</h2><p>全连接网络中，如果我们选择的激活函数是sigmod，那么越deep，就越容易发生梯度消失的情况。</p>
+<p>梯度消失的直观解释:</p>
+<p>梯度消失，简单点来说，就是整个曲线太平了，太平意味着什么？意味这求导后的值越来越接近0。如果梯度更新的慢，那么 w下沉的速度那是特别慢，从而导致收敛速度慢，训练时间无限延长。</p>
+<h1 id="knn"><a href="#knn" class="headerlink" title="knn"></a>knn</h1><p>L1曼哈顿距离</p>
+<p>将每一个对应像素（两张图片的）做差取绝对值，然后将所有像素的差的绝对值加起来</p>
+<p>L2欧拉距离</p>
+<p>用勾股定理算出距离值</p>
+<p>三种测试knn的方法（p5，t10)</p>
+<p>idea 1：一直使用k&#x3D;1的超参数（会导致图像过于拟合)(NO)</p>
+<p>idea 2：用多个超参数来训练算法，选出测试成绩最好的超参数（只会说明在这个测试集中他的表现最好，在一个全新的测试中就不一定了）（NO)</p>
+<p>**IDEA 3:**数据分为三个部分，训练集，验证集，和测试集，训练集和验证集执行ideal2的方法，然后用测试集来模拟在全新的数据中算法的表现，这才是最准确的数据，也是最好的方法</p>
+<p>idea 4：<strong>交叉验证</strong>，依旧保证一份数据作为测试集，然后将剩下的部分分成多个部分，分别取不同的部分作为验证集，除了验证集之外的数据作为训练集，通过多次取不同验证集来判断出最优秀的超参数（理论上是最好的，但是因为需要多次训练和测试，所消耗的时间会非常多，所以在大型数据中并不应用）</p>
+<p><strong>特征</strong></p>
+<h1 id="线性分类"><a href="#线性分类" class="headerlink" title="线性分类"></a>线性分类</h1><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4jh80j31eh0lx47p.jpg" alt="线性分类器"></p>
+<p>w代表的是权重，那个10是说明在10中特征里这张图片的得分是多少（？），x是图像的32×32×3个颜色通道所组成的列向量，(听了个寂寞)</p>
+<p>w是怎么生成的</p>
+<p>对应的图像模板是通过w中的行操作出来的，怎么操作出来的</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5hn1rj31hc0u0ha3.jpg" alt="线性分类示例"></p>
+<h1 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h1><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4j387j30m40u0jyi.jpg" alt="损失函数"></p>
+<p>x是代表输入的图像值，y代表的是标签，也就是目标也是真实值，关于预测值和真实值的偏差值如何进行运算（求绝对值，两者差的平方之类的）是损失函数，对于每一个图像所对应的损失函数之和求平均就是w的优劣的数值。</p>
+<h2 id="svm函数"><a href="#svm函数" class="headerlink" title="svm函数"></a>svm函数</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4hfuxj30l50lxgp9.jpg" alt="image-20211016082820979" style="zoom:67%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4l7cqj31710jzwkm.jpg" alt="image-20211016094819503" style="zoom:67%;" />
+
+<p>这里magin的归0是为了正确的类的数值不影响最后的总和，所以就归零，</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4r7oej31480ozahl.jpg" alt="image-20211016095528462" style="zoom: 50%;" />
+
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5qa02j31fo0kdwpj.jpg" alt="image-20211016100653068"></p>
+<p>L1正则化是为了稀疏矩阵，让矩阵中很多元素都为0，从而达到简化函数的作用</p>
+<p>L2正则化是为了使整体的复杂度降低，考虑的是w的整体分布</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5ddmkj30td030n0a.jpg" alt="image-20211016111317345" style="zoom: 33%;" />
+
+<img src="/CS231n-课程笔记大纲/image-20211016111644641.png" alt="image-20211016111644641" style="zoom: 67%;" />
+
+<p><strong>如果损失函数要趋于0，说明cat的分数要趋于正无穷，其他趋于负无穷才行</strong></p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6gi2lj31hc0u0qmi.jpg" alt="image-20211016113058384" style="zoom:33%;" />
+
+<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>如何找到最好的w</p>
+<p>w是权重，这里是讲如何通过优化方法来使当w和x（图像）相乘的时候，可以使他的损失函数最小，也就是让分类更加的准确（类似一种反馈？）</p>
+<p>1.用随机数来撞运气（不推荐</p>
+<p>2.用线性分类器优化（？没听懂，但没用）</p>
+<p>3.每一个位置上都加上一个数h，然后根据损失函数所导致的变化值和h通过导数计算算出梯度，（但是会很慢）</p>
+<p><strong>最好的方法：</strong>梯度下降</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4zb6ej3142093gp0.jpg" alt="image-20211016152029072"></p>
+<p>但是梯度下降在N很大的时候会非常的慢，因为他是一个迭代算法，我们常使用随机梯度下降，即在训练集中选取一部分数据来进行判断，一般取2^n，比如64、128之类的</p>
+<p>如果不能线性分开，可以考虑feature transform，比如将笛卡尔坐标系转换为极坐标，从而实现线性分类</p>
+<h1 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h1><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6dlzyj31gd0ppgym.jpg" alt="image-20211017091623653" style="zoom:33%;" />
+
+<p>这里的微分是可以使用乘法的，从而得到df&#x2F;dx的关系<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6nm9gj31gv0p9n5l.jpg" alt="image-20211017094429086"></p>
+<p>反向传播：就是通过后一个节点对于前一个节点求导所得的全部乘起来（链式法则，复合函数求导）就可以得到l和最初始的变量的梯度关系</p>
+<h2 id="sigmoid函数导数"><a href="#sigmoid函数导数" class="headerlink" title="sigmoid函数导数"></a>sigmoid函数导数</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5w4f8j30cf05n74f.jpg" alt="image-20211017095522300" style="zoom:50%;" />
+
+<p>加法门：做加法，梯度不变</p>
+<p>max门，因为是取最大值，比较大的节点处梯度依旧为前一个节点的梯度，较小的节点梯度为0</p>
+<p>乘法门：梯度&#x3D;前一个梯度×另一个节点值</p>
+<p>合并节点：当一个节点有两个及以上个前部的节点时，该节点的梯度值就为前几个节点之和</p>
+<h2 id="雅可比矩阵"><a href="#雅可比矩阵" class="headerlink" title="雅可比矩阵"></a>雅可比矩阵</h2><p>在图像的运算中，因为一个输入元素对应一个输出，所以该矩阵是一个对角矩阵（除了对角线以外的元素都为0）</p>
+<p>原图中w的梯度计算结果有误，应该转置一下</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6v4nzj31hc0q9wq8.jpg" alt="image-20211017134927400"></p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6k7p3j307j02rdfu.jpg" alt="mmexport1634453276536"></p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8u9cwj30on1hcts4.jpg" alt="mmexport1634453269787"></p>
+<p><img src="/project/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/image-20211129190730883.png" alt="image-20211129190730883"></p>
+<p>反向传播本质上就是确定最后一个梯度为1，然后倒退求导算出前面各项的梯度值，最后到输入的数据的梯度值，然后再根据梯度值进行调节，用梯度下降的方法，直到最后的损失函数最低</p>
+<p>这里没有开根号</p>
+<p>该点梯度总是会和该节点的形式（矩阵的规格）保持一致</p>
+<p><strong>然后q对（w和x）的导数是q乘以（w或x）矩阵的转置</strong></p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7q2qvj31gz0m7n5q.jpg" alt="image-20211017151521357" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g76gaoj315u0l4wj6.jpg" alt="image-20211017152658638" style="zoom:50%;" />
+
+<h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7eu3pj31bv0o4dpa.jpg" alt="image-20211017154740192" style="zoom:33%;" />
+
+<p>然后可以再对w2所在的函数取max，然后继续乘以w3，就变成了三层神经网络</p>
+<p>h就是得分函数（已经是非线性的了），是w1中出现的每一个范本的得分</p>
+<p>w1x就是统计了十个类别中的各个类别的得分，然后因为类别中有</p>
+<p>w2是对所有范本的加权，让你可以在多个范本中权衡，然后得到每个种类的最终得分</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7s1mqj30lw0ov432.jpg" alt="image-20211017160817411" style="zoom:50%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7kufij30sr07e411.jpg" alt="image-20211017162426700" style="zoom:67%;" />
+
+<h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7tdcqj31cx0mrn2f.jpg" alt="image-20211017162804189" style="zoom: 33%;" />
+
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#拟合X和Y，将x通过线性和非线性变换，成为与y相近的数据</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token comment" spellcheck="true">#随机创建训练数据</span>
+N<span class="token punctuation">,</span>D_in<span class="token punctuation">,</span>H<span class="token punctuation">,</span>D_out<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token number">10</span>
+x<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>N<span class="token punctuation">,</span>D_in<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#矩阵常用大写，数据常用小写</span>
+y<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>N<span class="token punctuation">,</span>D_out<span class="token punctuation">)</span>
+w1<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>D_in<span class="token punctuation">,</span>H<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#把（64，1000）的输入矩阵转为（64，100）的隐藏层，为（1000，100）的矩阵</span>
+w2<span class="token operator">=</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span>H<span class="token punctuation">,</span>D_out<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#把（64，100）的隐藏层转为（64，10）的输出矩阵,为（100，10）的矩阵</span>
+learning_rate<span class="token operator">=</span><span class="token number">1e</span><span class="token operator">-</span><span class="token number">6</span><span class="token comment" spellcheck="true">#学习率 10 -6次方,不要太大也不要太小</span>
+<span class="token keyword">for</span> it <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">:</span>  
+    <span class="token comment" spellcheck="true">#Forward pass 没有bias</span>
+    h<span class="token operator">=</span>x<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>w1<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#把（64，1000）的输入矩阵转x为（64，100）的隐藏层h</span>
+    h_relu<span class="token operator">=</span>np<span class="token punctuation">.</span>maximum<span class="token punctuation">(</span>h<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    y_pred<span class="token operator">=</span>h_relu<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>w2<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#把（64，100）的隐藏层h转为（64，10）的输出矩阵Y</span>
+    
+    <span class="token comment" spellcheck="true">#Compute Loss</span>
+    loss<span class="token operator">=</span>np<span class="token punctuation">.</span>square<span class="token punctuation">(</span>y_pred<span class="token operator">-</span>y<span class="token punctuation">)</span><span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>it<span class="token punctuation">,</span>loss<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#t是第几次迭代训练</span>
+    
+    <span class="token comment" spellcheck="true">#Backward pass </span>
+    <span class="token comment" spellcheck="true">#Compute the gradient</span>
+    grad_y_pred<span class="token operator">=</span><span class="token number">2.0</span><span class="token operator">*</span><span class="token punctuation">(</span>y_pred<span class="token operator">-</span>y<span class="token punctuation">)</span>
+    grad_w2<span class="token operator">=</span> h_relu<span class="token punctuation">.</span>T<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>grad_y_pred<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#h_relu是（64，100）维的矩阵，grad_y_pred是（64，10）维的矩阵，要想相乘，把h_relu进行转置，即h_relu.T</span>
+    grad_h_relu<span class="token operator">=</span>grad_y_pred<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>w2<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+    grad_h<span class="token operator">=</span>grad_h_relu<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    grad_h<span class="token punctuation">[</span>h<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span>
+    grad_w1<span class="token operator">=</span>x<span class="token punctuation">.</span>T<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>grad_h<span class="token punctuation">)</span>
+ 
+    <span class="token comment" spellcheck="true">#Update weights of w1 and w2</span>
+    w1<span class="token operator">-=</span>learning_rate<span class="token operator">*</span>grad_w1
+    w2<span class="token operator">=</span>learning_rate<span class="token operator">*</span>grad_w2
+</code></pre>
+<h2 id="三层神经网络"><a href="#三层神经网络" class="headerlink" title="三层神经网络"></a>三层神经网络</h2><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g83nlxj314708y43t.jpg" alt="image-20211017163246027"></p>
+<h1 id="卷积神经网络CNN"><a href="#卷积神经网络CNN" class="headerlink" title="卷积神经网络CNN"></a>卷积神经网络CNN</h1><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8kev2j31c10li42n.jpg" alt="image-20211018203924347" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8urlpj319w0l4dmq.jpg" alt="image-20211018204331634" style="zoom:33%;" />
+
+<p>将这个filter（卷积核）在32×32×3的图像上滑动，计算出每一个空间点位的点积结果，就是卷积核和图像上每一个像素的乘积，就是经过了75次乘法运算，然后再加上偏置项（b）</p>
+<p>这里的转置就是可以理解为把w和x都转换为向量，然后让其中一个转置后两者dot就可以得到输出结果，其实也就是把卷积核上的元素和图像上与之对应的元素乘积后所得</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8fvrsj316y0kmwl3.jpg" alt="image-20211018212007485" style="zoom:33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9kkwoj314o0kzdkt.jpg" alt="image-20211018215321818" style="zoom:33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g944aaj319s0lbdlv.jpg" alt="image-20211018215744099" style="zoom:33%;" />
+
+<p><strong>这里可以采取多个卷积核，同时就可以得到多个卷积所得的结果（28×28×1）</strong></p>
+ <img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbgqg4j31cm0ny7tf.jpg" alt="image-20211018220600903" style="zoom:33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9u09jj31ed0pk4it.jpg" alt="image-20211018223929729" style="zoom:33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gc9wacj31h50ppkb7.jpg" alt="image-20211018225220386" style="zoom:33%;" />
+
+<p><strong>步幅：</strong></p>
+<p><strong><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9pfn2j31h30mg79k.jpg" alt="image-20211019082022814" style="zoom:33%;" /></strong></p>
+<p>然后可以在周围一圈额外加上一圈像素值为0的值，这样就可以从7×7的图像中输出7×7的卷积结果，因为如果像之前一样的不补0，输出的会迅速缩小，无法到达更深层的神经网络。</p>
+<p>比如卷积核是5×5的，那么就应该在外围加上两圈0以保证输出不缩小，2就为他的填充宽度</p>
+<p>每一个卷积核（例如是5×5的（还有深度3））并不是75个参数，因为还有一个偏置项b，所以应该是76个参数</p>
+<p>卷积核的数量一般为k&#x3D;2^n，32，64之类的</p>
+<p>比较特殊的是1×1的卷积核，通常用来改变深度</p>
+<p>pytotch和caffe中的卷积</p>
+<p>全连接层(就是下图)，每一个输出的得分都和input中每一个参数都是有关系的，但是卷积神经网络却是分块的，每一个卷积得到的结果都只是输入的一小部分的运算结果，是只与图像的某个局部区域发生关联的</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9dy7bj30ov0a3dif.jpg" alt="image-20211019091243519" style="zoom:50%;" />
+
+<p>pool层（池化层）就是要让生成的表示更小更易控制，更小意味着有更少的参数，池化层对数据的深度是没有操作的，只是会对每一个平面上的像素做操作</p>
+<p>最常见的操作：max pooling</p>
+<p>（进行降采样处理一般来说filter都是不会重叠的）</p>
+<p>max pooling一般好于均值pooling，因为对于生物按理说应该是这个区域中刺激最大的神经元给予大脑的神经冲动最大，也就是对这个像素的反应最剧烈，所以用max pooling会更好，因为更加趋于现实</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9tkvzj31a90p67aa.jpg" alt="image-20211019092211180" style="zoom:33%;" />
+
+<p>qs：池化和滑动（在没有补0的情况下是会缩小他的面积的），为什么不可以用滑动代替池化层呢</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9z80hj30vh0eetcf.jpg" alt="image-20211019093615960" style="zoom: 50%;" />
+
+<p>S步长。F空间幅度（就是卷积核的长（宽））</p>
+<p>到卷积网络的最后一层，我们把所得的数据拉长成一个向量，就得到了一维输出,然后再乘以对应的权重，就可以得到分数了</p>
+<p><a href="http://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html">http://cs.stanford.edu/people/karpathy/convnetjs/demo/cifar10.html</a></p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gabdz5j312h0peakx.jpg" alt="image-20211019154504424"></p>
+<h1 id="训练神经网络：激活函数"><a href="#训练神经网络：激活函数" class="headerlink" title="训练神经网络：激活函数"></a>训练神经网络：激活函数</h1><h2 id="激活函数-1"><a href="#激活函数-1" class="headerlink" title="激活函数"></a>激活函数</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ga8wv9j30ws0iijw8.jpg" alt="image-20211019162642171" style="zoom:33%;" />
+
+<p>w0：权重值  cell body：激活函数所在地</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbj3asj31d10mhwl4.jpg" alt="image-20211019163420529" style="zoom:33%;" />
+
+<h3 id="sigmoid函数"><a href="#sigmoid函数" class="headerlink" title="sigmoid函数"></a>sigmoid函数</h3><p>可以将每一个元素压缩到[0,1]之间</p>
+<p>有三个问题：</p>
+<ol>
+<li>饱和神经元令梯度消失：因为x&#x3D;-10或者10，梯度是几乎等于0的，所以会导致上面传下来的梯度被kill了，会影响整个反向传播的支链，但是在0周围表现很好</li>
+<li>它是一个并不是一个以0为中心的函数，这样会导致f对于w求偏导&#x3D;x，x要么都是正数，要么都是负数，假如这是一个二维的向量，蓝色即为理想的w，但是因为我们调整的时候两者一定要同号，会变得十分低效<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gb4yd3j31b50o7al2.jpg" alt="image-20211019185510839" style="zoom:33%;" /></li>
+<li>这里运用了指数函数，导致运算的成本高</li>
+</ol>
+<h3 id="tanh函数"><a href="#tanh函数" class="headerlink" title="tanh函数"></a>tanh函数</h3><p>没有了sigmoid函数的第二个问题，但是第一个和第三个问题依旧存在</p>
+<h3 id="relu函数-f-x3D-max-0-x"><a href="#relu函数-f-x3D-max-0-x" class="headerlink" title="relu函数(f&#x3D;max(0,x))"></a>relu函数(f&#x3D;max(0,x))</h3><ol>
+<li>他并不会饱和</li>
+<li>电脑计算起来非常简单</li>
+<li>相比于上面的函数收敛更快</li>
+<li>和生物的实际情况更加相符</li>
+</ol>
+<p>但是也有问题，他依旧不是以0为中心</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbgvsjj30ki0d5adb.jpg" alt="image-20211019192826651" style="zoom:33%;" />
+
+<p><strong>严重的问题</strong>：如果初始的数据不好，它会使relu这个节点（神经元）陷入死亡状态，就会让反向传播的梯度归0</p>
+<p><strong>解决方法</strong>：</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbiqj5j30zj09ejxj.jpg" alt="image-20211019203726042" style="zoom:33%;" />
+
+<p>运用较小的正偏置项来初始化relu</p>
+<h3 id="leaky-relu"><a href="#leaky-relu" class="headerlink" title="leaky relu"></a>leaky relu</h3><p>在x的负半轴上会有一个极小的斜率以保持神经元还活着（昏迷状态）梯度变小，那就容易恢复正常</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbpnm3j30ch02xdg6.jpg" alt="image-20211019204457128" style="zoom: 50%;" />
+
+<p>alpha为超参</p>
+<p>注意：从理论上讲，Leaky ReLU 具有 ReLU 的所有优点，而且 Dead ReLU 不会有任何问题，但在实际操作中，尚未完全证明 Leaky ReLU 总是比 ReLU 更好。</p>
+<h3 id="ELU"><a href="#ELU" class="headerlink" title="ELU"></a>ELU</h3><p>有relu的所有优点，而且它的均值也为0，但是它在负区间并不是斜的，它只是设置了一个负饱和度，函数值低到一定地步梯度也会为0</p>
+<p>这样会让模型对于噪音更加具有鲁棒性，同时它也得到了更加强劲的反激活状态（因为是指数函数）</p>
+<p><strong>缺点</strong>:是指数函数</p>
+<h3 id="maxout-neuron"><a href="#maxout-neuron" class="headerlink" title="maxout neuron"></a>maxout neuron</h3><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbv9y6j30nm0apgqb.jpg" alt="image-20211020144050230" style="zoom: 50%;" />
+
+
+
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p>要开始训练网络了</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbwf9nj319v0k4jyk.jpg" alt="image-20211020145002867" style="zoom: 33%;" />
+
+<p>首先输入的数据（图一）—–&gt;进行0均值化—-&gt;然后归一化(我们一般只做均值化)</p>
+<p>均值化可以对整一个像素做，也可以单独对某一个通道做（取<strong>所有的训练图像的平均</strong>然后减去）</p>
+<p>这个并不能解决sigmoid的问题，对于第一层来说，解决了，但是对于更加深层的网络，这个问题反而会更加恶化</p>
+<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><p>如果权重初始化都是0，所有的神经元会同时进行一样的操作，同一层输出的梯度也相等，会变得参数对称</p>
+<ol>
+<li><p>小型随机数（运用0均值的高斯函数和标准误差）</p>
+<pre class=" language-python"><code class="language-python">w<span class="token operator">=</span><span class="token number">0.01</span><span class="token operator">*</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span>D<span class="token punctuation">,</span>H<span class="token punctuation">)</span>
+</code></pre>
+<p>这样在小型神经网络是没有问题的,但是在比较深的神经网络中，会出现问题</p>
+<p>原因：<strong>简单来讲就是正向传播时，由于权重W设置的太小，一直乘W导致每一层的输入x越来越小，而反向传播时，梯度dW又是取决于x的大小的，x太小则dW太小，权重不更新</strong></p>
+<p>这种情况会导致反向传播的时候梯度消失（因为反向传播是通过上一梯度dot（x）如果x趋向于0，会导致传播的梯度也趋向于0）</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcagk5j30ze0ozqb2.jpg" alt="image-20211020154541795" style="zoom:33%;" />
+
+<p>但是如果把权重改成1，会导致tanh函数的输出值到后几层一直会是1或者-1，成为饱和神经元，梯度输出一直为0</p>
+</li>
+</ol>
+<p>Xavier初始化</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcl28pj315c0kt7kp.jpg" alt="image-20211020160658828"></p>
+<p>上面这幅图只适用于tanh函数，如果用relu函数，因为我们进行过0均值化，所以会导致一半的神经元输出为0，会导致方差减半，所以可以通过下面函数来解决这一个问题</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcbqy7j30tu01sq40.jpg" alt="image-20211020161532377"></p>
+<h2 id="批量归一化"><a href="#批量归一化" class="headerlink" title="批量归一化"></a>批量归一化</h2><p>想要一直保持数据在高斯函数内被激活，就得批量归一化（在训练开始时）</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcdma0j30j109c758.jpg" alt="image-20211021072055593" style="zoom:33%;" />
+
+<p>var是方差的意思</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gd6ugzj317t0fu466.jpg" alt="image-20211021074807879" style="zoom: 33%;" />
+
+<p>有N个数据，每一个数据是D维度，然后通过x（也就是将每一个向量的同一维独立进行期望计算和方差计算，然后归一化）因为经过和w的dot，数据分布会不规范，影响下一层的输入和输出，所以对其进行归一化，让他的输入一直保持十分规范</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcxmhfj319y0kogsf.jpg" alt="image-20211021075047572" style="zoom:33%;" />
+
+<p>归一化后可以进行缩放</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gda8jqj31an0hydls.jpg" alt="image-20211021080825936" style="zoom:33%;" />
+
+<p>γ代表的是缩放比例，β代表的是平移</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge69zwj31bp0nd7gt.jpg" alt="image-20211021081221306" style="zoom:33%;" />
+
+<p>因为不一定对每一个激活函数高斯数据都是最好的，所以通过加上γ和β来自己学习最好的归一化的参数</p>
+<h2 id="训练过程监控"><a href="#训练过程监控" class="headerlink" title="训练过程监控"></a>训练过程监控</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gd9jygj311u0l47jd.jpg" alt="image-20211021084922804" style="zoom: 50%;" />
+
+<p>指数函数分类器的损失将会是你负对数的结果（比如有十个种类的得分，希望的loss函数的值是-ln(1&#x2F;10),也就是2.3左右</p>
+<p>学习率如果太低，会导致loss基本不变化</p>
+<h2 id="超参数优化"><a href="#超参数优化" class="headerlink" title="超参数优化"></a>超参数优化</h2><p>通过交叉验证（在训练集上训练，在验证集上验证，同时调整参数</p>
+<p>epoch，运用完整的数据集去完成一次完整的训练</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdp6eoj316e0ksqb2.jpg" alt="image-20211021091625935" style="zoom:33%;" />
+
+<p>qs：如果超参更多，这维度不是成倍增长吗</p>
+<p>序号5</p>
+<h1 id="更好的优化"><a href="#更好的优化" class="headerlink" title="更好的优化"></a>更好的优化</h1><h2 id="为何要归一化"><a href="#为何要归一化" class="headerlink" title="为何要归一化"></a>为何要归一化</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdep42j30gz09sdh6.jpg" alt="image-20211021135759951" style="zoom:33%;" />
+
+<p>有很多很多原因，原因之一是通过归一化，原本的数据十分的敏感，就是直线动一下，可能就有很多点被划分到了错误的地方，通过归一化，让数据分割更加的简单，容易操作</p>
+<h2 id="更加fancy的优化方式"><a href="#更加fancy的优化方式" class="headerlink" title="更加fancy的优化方式"></a>更加fancy的优化方式</h2><p><a href="https://www.zhihu.com/question/323747423">(5 封私信 &#x2F; 72 条消息) 如何理解Adam算法(Adaptive Momentum Estimation)？ - 知乎 (zhihu.com)</a></p>
+<h3 id="1-梯度下降"><a href="#1-梯度下降" class="headerlink" title="1.梯度下降"></a>1.梯度下降<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdg2hdj30vu06kdi0.jpg" alt="image-20211021144955724"></h3><p><strong>缺点</strong>：**1.**如果你的三维模型是像一个峡谷一样，有鞍部，那将会是’之‘形的优化路线</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge8fvdj31a70h8qcp.jpg" alt="image-20211021145508460" style="zoom:33%;" />
+
+<p>​     2.<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdjfx7j30a90aujro.jpg" alt="image-20211021150933768" style="zoom:33%;" /></p>
+<p>如果出现了局部最小值，梯度下降将在这一个点停止，得出的结果并不好，而且如果在一点，导数等于0，但是他是递减的，一方面梯度下降也会卡在了这一点，另一方面，在接近这个点时，梯度会变得非常非常小，所以就导致了progression变得非常慢。在高维度，局部最小值非常少见，因为很难找出一点其余所有的梯度都是大于0，但是几乎每一个点都是鞍部，所以梯度下降不可取</p>
+<p>**3.**因为N在像素多的时候很大很大，因此我们采取的策略是随机梯度下降，所以我们所选取的数据不代表训练集真实情况，并且很容易被noise干扰</p>
+<img src="C:\Users\谢承兴\Desktop\md笔记\图片\cs231n_2017_lecture7.jpg" alt="cs231n_2017_lecture7" style="zoom:33%;" />
+
+<h3 id="2-随机梯度下降-momentum（动量）"><a href="#2-随机梯度下降-momentum（动量）" class="headerlink" title="2.随机梯度下降+momentum（动量）"></a>2.随机梯度下降+momentum（动量）</h3><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gev09yj31ch0q3gta.jpg" alt="image-20211021152619696" style="zoom:33%;" />
+
+<p>momentum可以理解为一个很小很小的速度<strong>（这东西初始化为0）</strong>，这里又多了一个超参ρ，称为摩擦系数，通常为0.9，我们先利用ρ对速度进行衰弱（<strong>就是减少旧速度，因为后面要加上新的东西</strong>），然后再加到梯度上，但是，这时候我们是在速度方向上前进的，而非原梯度方向前进。（类比我们函数点是一个球，它有一个速度，在球滚下去的时候，即使经过了局部最小值，它也还是有一个速度继续滚动，那对于鞍部部分更没有问题了</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdusm0j30iq0exmz4.jpg" alt="image-20211021154912429"></p>
+<p>momentum：我们估算当时梯度的方向，然后取梯度和速度的混合作为实际前进方向</p>
+<h3 id="3-nesterov-momentum："><a href="#3-nesterov-momentum：" class="headerlink" title="3.nesterov momentum："></a>3.nesterov momentum：</h3><p>是现在速度方向上前进一步，然后计算在这个点的梯度的方向和大小，将两者混合，然后你退回红色起点，朝着两者混合的终点方向前进</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge2zj8j314q0k447j.jpg" alt="image-20211021161146905" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge7uthj313a0jgk0m.jpg" alt="image-20211021163736595" style="zoom:33%;" />
+
+<h3 id="4-AdaGrad（不使用）"><a href="#4-AdaGrad（不使用）" class="headerlink" title="4.AdaGrad（不使用）"></a>4.AdaGrad（不使用）</h3><p>在优化的过程中，需要保持一个在训练过程中的每一步的梯度的平方和的持续估计，没有速度项，而是有一个梯度平方项，在学习的过程中，我们会一直累加当前梯度的平方到这个梯度平方项，然后在求梯度方向的时候除以这个的平方项。</p>
+<p>如果一个梯度很大，另一个梯度很小，我们会一直除以这样很小的数字的开根，从而加速了在小梯度维度上的学习进度，然而在一个梯度很大的方向，我们反而会除以一个很大的值，导致学习进度变慢</p>
+<p>随着时间的积累，因为grand_squared是一直在增长的，所以导致到最后会学习的非常慢（在凸函数会非常好）</p>
+<h3 id="5-RMSProp"><a href="#5-RMSProp" class="headerlink" title="5.RMSProp"></a>5.RMSProp</h3><p>相比于adagrad，它会让平方和按一定比例下降，感觉和动量优化法很像（但好像会导致训练一直在变慢，因为平方被削减了）</p>
+<h3 id="6-Adam（结合两者好处）"><a href="#6-Adam（结合两者好处）" class="headerlink" title="6.Adam（结合两者好处）"></a>6.Adam（结合两者好处）</h3><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf20pej31gd0i1gto.jpg" alt="image-20211021185149414"></p>
+<p>因为一开始速度1和速度二都是初始化为0的，这会导致步长有可能会很长很长（有些情况可能v1和v2互相抵消了）但是如果步长得到的很大，就会导致整一个网络崩溃，所以要加上中间两行代码，来防止步长过长</p>
+<p><strong>Justin说是最牛逼的算法（β1设置为0.9，β2设置成0.999，学习率设置为1e-3或者5e-4）</strong></p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfii0aj318k0ootl3.jpg" alt="image-20211021190014927" style="zoom:33%;" />
+
+<pre class=" language-python"><code class="language-python">    m <span class="token operator">=</span> beta1<span class="token operator">*</span>m <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>beta1<span class="token punctuation">)</span><span class="token operator">*</span>dx
+    v <span class="token operator">=</span> beta2<span class="token operator">*</span>v <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">-</span>beta2<span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>dx<span class="token operator">**</span><span class="token number">2</span><span class="token punctuation">)</span>
+    x <span class="token operator">+=</span> <span class="token operator">-</span> learning_rate <span class="token operator">*</span> m <span class="token operator">/</span> <span class="token punctuation">(</span>np<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span>v<span class="token punctuation">)</span> <span class="token operator">+</span> eps<span class="token punctuation">)</span>
+</code></pre>
+<p><img src="C:\Users\谢承兴\Desktop\优化算法.gif" alt="优化算法"></p>
+<p><img src="C:\Users\谢承兴\Desktop\优化算法图二.gif" alt="优化算法图二"></p>
+<h3 id="7-学习率"><a href="#7-学习率" class="headerlink" title="7.学习率"></a>7.学习率</h3><p>可以让学习率变换，让它随着时间的推移逐渐变小</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf2vovj30on0bydiq.jpg" alt="image-20211021190549943" style="zoom: 50%;" />
+
+<p>图二就是用了学习率降低的函数</p>
+<p><strong>注意</strong>：学习率是二级的超参，要先定好一个比较合适的学习率，先开始调试神经网络，在进行交叉验证之后，可以通过调节，让学习率减少，从而得到更加准确的值（adam算法中用的比较少）</p>
+<h3 id="8-牛顿法和拟牛顿法"><a href="#8-牛顿法和拟牛顿法" class="headerlink" title="8.牛顿法和拟牛顿法"></a>8.牛顿法和拟牛顿法</h3><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfc6y6j31g50p2dol.jpg" alt="image-20211021191224706" style="zoom:33%;" />
+
+<p>通过取函数的二阶偏导的逼近（泰勒展开），从函数上的点可以直接到二次函数的最低点（没有学习率的存在，这是原始的牛顿法，现在可能还是需要学习率的）</p>
+<p><strong>局限性</strong>：如果N很大，会导致海森矩阵很大[n*n]，对海森矩阵求逆就很难了，所以我们不用完整的求出海森矩阵的逆，只用逼近海森矩阵的逆即可（常见的是低阶逼近），所以就诞生了拟牛顿法</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf5rhfj30lk09tq48.jpg" alt="image-20211021191925397" style="zoom:33%;" />
+
+
+
+<h3 id="L-BFGS"><a href="#L-BFGS" class="headerlink" title="L-BFGS"></a>L-BFGS</h3><p>不常用，对于随机的处理能力不好，了解即可</p>
+<h2 id="模型总效果"><a href="#模型总效果" class="headerlink" title="模型总效果"></a>模型总效果</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf5rhfj30lk09tq48.jpg" alt="image-20211021192829513" style="zoom: 50%;" />
+
+<p>用好多个模型来训练，然后将他们的结果综合起来来分析结果，可以稳定提升performance</p>
+<h2 id="正则化-1"><a href="#正则化-1" class="headerlink" title="正则化"></a>正则化</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfvyjmj31h90ngdpr.jpg" alt="image-20211021200124677" style="zoom:33%;" />
+
+<h3 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h3><p>每一次向前传播，都随机的将一些该层的神经元所输出的值（就是激活函数的函数值）设置为0（一般在全连接层里设置），也有可能在卷积层（卷积层是把几个通道的输出置为0）</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggjutuj31270lzgv5.jpg" alt="image-20211021201019204" style="zoom: 50%;" />
+
+<p>*H1.shape是序列解包的意思</p>
+<p><strong>提高准确的原因（猜测）</strong>：因为在比较深层的网络中，基本上没有一种dropout的网络是相同的，所以就可以看成同时间训练很多个模型（网络）所以得到的结果会有更好的performance</p>
+<p><strong>测试时的问题</strong>：因为每一次的网络都是不一样的（在足够深），今天用这一个网络（假如我们检测时还是用dropout）判断出来是猫，但是第二天，因为网络变化了，导致输出的结果有可能不是猫了，这就会非常的糟糕。</p>
+<p><strong>解决方法</strong>：这里用了一点点概率论的内容</p>
+<p>因为每一个节点舍弃的概率为0.5，又因为在测试时间输出a&#x3D;w1x+w2y，根据概率论基本知识，我们在训练的时候所输出的a实际上是0.5*(w1x+w2y)(这里是数学期望值)</p>
+<p><strong>结论</strong>：因为在test的时候我们没有进行dropout的随机，所以只要把我们test中的score×dropout的概率，就可以依据这得分来和train时的得分比较</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggx0vuj31h20prq9t.jpg" alt="image-20211021202924273" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggb7wqj31330hgk42.jpg" alt="image-20211021203835402" style="zoom:50%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggfza5j31hc0q44fd.jpg" alt="image-20211021204448553" style="zoom:50%;" />
+
+<p>但是这个需要更多的时间去运行</p>
+<h3 id="batch-normalization"><a href="#batch-normalization" class="headerlink" title="batch normalization"></a>batch normalization</h3><p>在batch normalization中，已经让数据具有随机性了，所以已经具有正则化的效果了</p>
+<h3 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h3><p>可以通过<strong>水平翻转图像，或者时选取图像中的一部分去训练</strong></p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gg0x6sj313f0juql7.jpg" alt="image-20211022074249010" style="zoom:33%;" />
+
+<p>通常时：原来图像+五个标准裁剪+五个标准裁剪的翻转</p>
+<p><strong>色彩抖动</strong></p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gglie4j313w0jn7m5.jpg" alt="image-20211022075031882" style="zoom:33%;" />
+
+<h3 id="dropconnect"><a href="#dropconnect" class="headerlink" title="dropconnect"></a>dropconnect</h3><p>将权重矩阵w中的某些数据归0</p>
+<h3 id="fational-max-pooling"><a href="#fational-max-pooling" class="headerlink" title="fational max pooling"></a>fational max pooling</h3><p>训练的时候随机池化某些位置，在test的时候，可以通过池化特定的位置或者取很多样本求平均来抵消随机性</p>
+<h3 id="随机深度"><a href="#随机深度" class="headerlink" title="随机深度"></a>随机深度</h3><p>在训练的时候，只用部分层，在test的时候，使用全部层</p>
+<h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>如果你已经在一个很大的数据集上经过了训练，但是你想对其中的一部分你更感兴趣的数据集进行特定的训练，（你只对这一千个类别中的那十个狗的种类感兴趣）就可以在这个网络的基础上进行操作</p>
+<p>通常要修改最后一层输入和最后一层输出的中间的全连接层，你需要重新初始化这部分的权重矩阵然后就是一个线性分类器，让你的数据在这里收敛</p>
+<p>如果你的数据集很大，可以尝试不止更新一层）</p>
+<p>因为如果样本数量很少，就会更加容易导致过拟合，最好的方法是加大样本量，但是在不加大样本量的前提下，可以通过迁移学习在一定程度上解决过拟合问题</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggbp05j314g0isn7o.jpg" alt="image-20211022115049643" style="zoom:33%;" />
+
+<h1 id="图像目标检测和图像分割"><a href="#图像目标检测和图像分割" class="headerlink" title="图像目标检测和图像分割"></a>图像目标检测和图像分割</h1><h2 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h2><p>输入一张图像，对图像中的每一个像素进行分组分割（我们是对每一个像素进行分类，所以有两头牛时，他们的像素都会被划分到cow里面）也就是输出结果并没有区分两头牛。</p>
+<p><strong>ideal 1</strong>:可以通过滑动窗口，也就是把一张图片分割成一块块很小的区域，然后去判定这一块块小的图像所代表的类别(计算量非常的大)，但是，可以通过判断相邻的相似图像块，可以共享很多计算</p>
+<p><strong>ideal 2</strong>：通过卷积神经网络，可以理解成对每一个像素都有一个得分，然后根据像素的得分来判断类别，（但是计算量还是很大</p>
+<p><strong>ideal3</strong>:采用类似bottleneck，先down sample后upsample,upsample有两种方式，bed of nails、nearest neighbor，而且在下采样时，我们会记住那些最大值的位置，在upsample的时候还原</p>
+<p>因为下采样可以通过跨步卷积（步长为2的卷积），那么upsample就可以用转置卷积</p>
+<p>这个的优点：因为通过maxpooling，我们可以让最大值，也就是最有特征的点凸显出来，以达到我们想要的效果</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjbww9j30i40i4gqs.jpg" alt="image-20211025134709533" style="zoom:33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjm9opj31070iywpq.jpg" alt="image-20211025134841469" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gj6jf3j314i0cxq8o.jpg" alt="image-20211025141718011" style="zoom:50%;" />
+
+
+
+<p>转置卷积：红色框框的数据乘以卷积核内部的数据，然后赋值到output里面，但是步长是要为2的 </p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gj5j70j30mb0dpmyn.jpg" alt="image-20211025143237724" style="zoom: 50%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjggg2j30yx0este3.jpg" alt="image-20211025144242207" style="zoom: 50%;" />
+
+<h2 id="分类和定位（classification-and-location"><a href="#分类和定位（classification-and-location" class="headerlink" title="分类和定位（classification and location"></a>分类和定位（classification and location</h2><p>和单纯的分类不一样的是，我们不只有一个全连接层，我们还有第二个全连接层，第一个全连接层输出的就是每一个类别所对应的得分，第二个输出四个参数，是宽度，高度，x坐标，y坐标</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjtafyj31h30oejzi.jpg" alt="image-20211025152101715"></p>
+<h2 id="物体识别"><a href="#物体识别" class="headerlink" title="物体识别"></a>物体识别</h2><p>和语义分割差异很大，因为他这里不只有一个物体，你不知道这里的物体有多少个</p>
+<p>ideal1:滑动窗口，思想类似，先规定一个图像片段，然后判断片段中是不是某一个物体，（如果这一块图像不属于规定的任何一个物体，就定义为background）（但是滑动窗口要判断ji’qian’ci</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk58unj31fd0hp7fc.jpg" alt="image-20211025154830188"></p>
+<p>ideal2：候选区域，会划分很多的候选区域来进行选择，（2000个），这也叫做目标选择法，我们要先采取备选网络结构，找到物体可能存在的备选区域，再用卷积神经网络去对这些区域进行分类，这样子会比上面的算法好（因为要使用一个卷积神经网络，所以要保证每一块所选区域的大小要保持相等）</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjlwlcj30n90cp42t.jpg" alt="image-20211025161036897"></p>
+<p>问题：1.算力</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk13kdj30nv0atwhu.jpg" alt="image-20211025161837311"></p>
+<h3 id="fast-r-cnn"><a href="#fast-r-cnn" class="headerlink" title="fast r-cnn"></a>fast r-cnn</h3><p>现在不是安装兴趣区域去分割，而是通过一些卷积层，对整一个图像运行，从而得到这幅图像的高分辨率特征映射</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk144fj30om0c2425.jpg" alt="image-20211025162240487"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3940902-5519b489e581557a.png" alt="img"></p>
+<p>关于rol池化层：就是通过区域建议选定一块特定的区域，然后通过分割（假如要输出2×2的矩阵，就分割成四块）然后对于四块中的每一块取maxpooling，就得到输出的矩阵了</p>
+<p><a href="https://blog.csdn.net/auto1993/article/details/78514071">(14条消息) ROI Pooling层详解_AUTO1993的博客-CSDN博客_roipool</a></p>
+<p>使用Fast RCNN进行目标检测的预测流程如下</p>
+<ul>
+<li>拿到一张图片，使用selective search选取建议框</li>
+<li>将原始图片输入卷积神经网络之中，获取特征图（最后一次池化前的卷积计算结果）</li>
+<li>对每个建议框，从特征图中找到对应位置（按照比例寻找即可），截取出特征框（<strong>深度保持不变</strong>）</li>
+<li>将每个特征框划分为 <img src="https://www.zhihu.com/equation?tex=H%5Ctimes+W" alt="[公式]"> 个网格（论文中是 <img src="https://www.zhihu.com/equation?tex=7+%5Ctimes+7" alt="[公式]"> ），在每个网格内进行池化（即每个网格内取最大值），这就是ROI池化。这样每个特征框就被转化为了 <img src="https://www.zhihu.com/equation?tex=7%5Ctimes+7%5Ctimes+C" alt="[公式]"> 的矩阵(其中C为深度)</li>
+<li>对每个矩阵拉长为一个向量，分别作为之后的全连接层的输入</li>
+<li>全连接层的输出有两个，计算分类得分和bounding box回归（bounding box表示预测时要画的框）。前者是sotfmax的21类分类器（假设有20个类别+背景类），输出属于每一类的概率（所有建议框的输出构成得分矩阵）；后者是输出一个 <img src="https://www.zhihu.com/equation?tex=20%5Ctimes+4" alt="[公式]"> 的矩阵，4表示(x, y, w, h)，20表示20个类，这里是对20个类分别计算了框的位置和大小</li>
+<li>对输出的得分矩阵使用非极大抑制方法NMS选出少数框，对每一个框选择概率最大的类作为标注的类，根据网络结构的第二个输出，选择对应类下的位置和大小对图像进行标注</li>
+</ul>
+<h2 id="YOLO模型"><a href="#YOLO模型" class="headerlink" title="YOLO模型"></a>YOLO模型</h2><p><a href="https://developer.aliyun.com/article/679591">深度学习目标检测系列：一文弄懂YOLO算法|附Python源码-阿里云开发者社区 (aliyun.com)</a></p>
+<h2 id="SSD模型"><a href="#SSD模型" class="headerlink" title="SSD模型"></a>SSD模型</h2><h2 id="Dense-Caption"><a href="#Dense-Caption" class="headerlink" title="Dense Caption"></a>Dense Caption</h2><h2 id="Instance-Segmentation"><a href="#Instance-Segmentation" class="headerlink" title="Instance Segmentation"></a>Instance Segmentation</h2><p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjxmk2j30kx05pwfl.jpg" alt="image-20211025230744646"></p>
+<h2 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h2><h1 id="可视化和理解"><a href="#可视化和理解" class="headerlink" title="可视化和理解"></a>可视化和理解</h1><p>因为最开始的卷积核是三个通道3×11×11，一共假设有64个，那如果把一个卷积核看成一个图像，则就有六十四个图像，很神奇的事第一层卷积神经网络所得到的都是有向边和相反的颜色</p>
+<p>t-sne</p>
+<p>让很多图像在卷积神经网络上跑，然后对每一个输出的4096维度的向量进行t-sne的降维</p>
+<p>如果我们把 让整张图片的平均像素绘制成一个正方形遮挡图像中的一部分，这会对图像识别产生巨大的影响</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk3c4mj30ou0c6wi5.jpg" alt="image-20211026084117334"></p>
+<p>格拉姆矩阵</p>
+<p>风格转换算法</p>
+<p>fast style transfer</p>
+<h1 id="生成模型"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型</h1><h2 id="pixelRNN-AND-PixelCNN"><a href="#pixelRNN-AND-PixelCNN" class="headerlink" title="pixelRNN AND PixelCNN"></a>pixelRNN AND PixelCNN</h2><p>从对角线开始按照顺序生成像素（pixelrnn）</p>
+<p>上面也已经提到了，生成模型可以用来生成新的图片，比如我要生成类似mnist那种28<em>28的数字图片，那我能想到的最简单的方案就是先生成第一个像素，然后看第一个像素是啥，再生成第二个像素，接着这样一直生成28</em>28个像素，其实也就是概率论中的条件概率的链式法则</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkw7x9j31av0kxjxn.jpg" alt="image-20211027135449958" style="zoom: 33%;" />
+
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkrlzhj30yj0kudl2.jpg" alt="image-20211027192859541" style="zoom: 50%;" />
+
+<p>输入的数据大小和重构的数据大小相等</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkclldj313k0e4ai6.jpg" alt="image-20211027194153566" style="zoom:33%;" />
+
+<p>第一个参数是z的分布列(可以计算)</p>
+<p>第二个参数是指定一个神经网络解码器（基本上不可能对于每一个z算出对应的px|z）</p>
+<p>pθx也十分难以计算</p>
+<p>solution：用一个额外的神经网络去逼近这个值</p>
+<img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkf7g3j30ye0din5t.jpg" alt="image-20211027195053516" style="zoom:50%;" />
+
+<p>VAES</p>
+<h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6glct9bj318r0nzdpj.jpg" alt="image-20211027221553188" style="zoom:33%;" />
+
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gl29sjj31b80bf7as.jpg" alt="image-20211027222003900"></p>
+<p>第一项是在训练数据分布上取log(D(n))的期望，第二项是判断器对于生成器所形成的图片</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ysjpxtj314e0d649m.jpg" alt="image-20211027224120771.png"></p>
+<p>第一种想法：我们要最小化判断器判断正确的概率，但是这会导致一开始优化的特别慢，到后面优化速度才加快</p>
+<p>第二种，我们要让D(G(z))最大化，就是最大化错误的概率，这要就避免了一开始的梯度慢的问题</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4y6yivvt6j31fl0megus.jpg" alt="image-20211027224945403.png"></p>
+<p>Uncertainty-driven loss for single image super-resolution</p>
+<table>
+<thead>
+<tr>
+<th align="right">IP Address</th>
+<th>140.82.112.3</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="right">IP Address</th>
+<th>199.232.69.194</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right"></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>185.199.108.153</strong></li>
+<li><strong>185.199.109.153</strong></li>
+<li><strong>185.199.110.153</strong></li>
+<li><strong>185.199.111.153</strong></li>
+</ul>
+]]></content>
+      <categories>
+        <category>deep learning</category>
+      </categories>
+      <tags>
+        <tag>CS231n</tag>
+        <tag>get state</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo+GitHub构建博客时无法更新的问题</title>
+    <url>/project/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>building blog</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/project/2022/08/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
 </code></pre>
@@ -19,8 +491,25 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2022/08/06/Hello-World-0/</url>
-    <content><![CDATA[]]></content>
+    <title>神经网络初始化指定种子</title>
+    <url>/project/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/</url>
+    <content><![CDATA[<h1 id="网络指定种子随机化（使网络可复现"><a href="#网络指定种子随机化（使网络可复现" class="headerlink" title="网络指定种子随机化（使网络可复现"></a>网络指定种子随机化（使网络可复现</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">setup_seed</span><span class="token punctuation">(</span>seed<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     torch<span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
+     torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>manual_seed_all<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
+     np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
+     random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span>seed<span class="token punctuation">)</span>
+     torch<span class="token punctuation">.</span>backends<span class="token punctuation">.</span>cudnn<span class="token punctuation">.</span>deterministic <span class="token operator">=</span> <span class="token boolean">True</span>
+<span class="token comment" spellcheck="true"># 设置随机数种子</span>
+setup_seed<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+</code></pre>
+<p>lstm在dropout不为0的时候有问题，不可以复现！</p>
+]]></content>
+      <categories>
+        <category>deep learning</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>random</tag>
+      </tags>
   </entry>
 </search>
