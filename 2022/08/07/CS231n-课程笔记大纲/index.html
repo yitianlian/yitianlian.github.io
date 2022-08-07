@@ -1,75 +1,214 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN" class="loading">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CS231n 课程笔记大纲 - 一捧易天莲的碎碎念</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="yitianlian,"> 
-    <meta name="description" content="记录美好生活,名词定义饱和神经元：饱和神经元(Saturated Neurons) 饱和神经元会使得梯度消失问题雪上加霜，假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯,"> 
-    <meta name="author" content="yitianlian"> 
-    <link rel="alternative" href="atom.xml" title="一捧易天莲的碎碎念" type="application/atom+xml"> 
-    <link rel="icon" href="/project/img/bitbug_favicon.ico"> 
-    
-    
-    
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="CS231n 课程笔记大纲 - 一捧易天莲的碎碎念"/>
-    <meta name="twitter:description" content="记录美好生活,名词定义饱和神经元：饱和神经元(Saturated Neurons) 饱和神经元会使得梯度消失问题雪上加霜，假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯,"/>
-    
-    
-    
-    
-    <meta property="og:site_name" content="一捧易天莲的碎碎念"/>
-    <meta property="og:type" content="object"/>
-    <meta property="og:title" content="CS231n 课程笔记大纲 - 一捧易天莲的碎碎念"/>
-    <meta property="og:description" content="记录美好生活,名词定义饱和神经元：饱和神经元(Saturated Neurons) 饱和神经元会使得梯度消失问题雪上加霜，假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯,"/>
-    
-<link rel="stylesheet" href="/project/css/diaspora.css">
+  <meta charset="utf-8">
+  
+  
+  <title>CS231n 课程笔记大纲 | 一捧易天莲的碎碎念</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="名词定义饱和神经元：饱和神经元(Saturated Neurons) 饱和神经元会使得梯度消失问题雪上加霜，假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯度较大，该神经元权重(w)和偏置(bias)的梯度也会趋近于0，导致参数无法得到有效更新。 dead relu：在训练过程中，由于一次梯度更新的幅度过大，导致某些Relu节点的权重调整的太大（让w&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231n 课程笔记大纲">
+<meta property="og:url" content="https://yitianlian.github.io/project/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/index.html">
+<meta property="og:site_name" content="一捧易天莲的碎碎念">
+<meta property="og:description" content="名词定义饱和神经元：饱和神经元(Saturated Neurons) 饱和神经元会使得梯度消失问题雪上加霜，假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯度较大，该神经元权重(w)和偏置(bias)的梯度也会趋近于0，导致参数无法得到有效更新。 dead relu：在训练过程中，由于一次梯度更新的幅度过大，导致某些Relu节点的权重调整的太大（让w&amp;lt">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4jh80j31eh0lx47p.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5hn1rj31hc0u0ha3.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4j387j30m40u0jyi.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4hfuxj30l50lxgp9.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4l7cqj31710jzwkm.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4r7oej31480ozahl.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5qa02j31fo0kdwpj.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5ddmkj30td030n0a.jpg">
+<meta property="og:image" content="https://yitianlian.github.io/CS231n-课程笔记大纲/image-20211016111644641.png">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6gi2lj31hc0u0qmi.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4zb6ej3142093gp0.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6dlzyj31gd0ppgym.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6nm9gj31gv0p9n5l.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g5w4f8j30cf05n74f.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6v4nzj31hc0q9wq8.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g6k7p3j307j02rdfu.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8u9cwj30on1hcts4.jpg">
+<meta property="og:image" content="https://yitianlian.github.io/project/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/image-20211129190730883.png">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7q2qvj31gz0m7n5q.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g76gaoj315u0l4wj6.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7eu3pj31bv0o4dpa.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7s1mqj30lw0ov432.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7kufij30sr07e411.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g7tdcqj31cx0mrn2f.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g83nlxj314708y43t.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8kev2j31c10li42n.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8urlpj319w0l4dmq.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g8fvrsj316y0kmwl3.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9kkwoj314o0kzdkt.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g944aaj319s0lbdlv.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbgqg4j31cm0ny7tf.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9u09jj31ed0pk4it.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gc9wacj31h50ppkb7.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9pfn2j31h30mg79k.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9dy7bj30ov0a3dif.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9tkvzj31a90p67aa.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g9z80hj30vh0eetcf.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gabdz5j312h0peakx.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ga8wv9j30ws0iijw8.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbj3asj31d10mhwl4.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gb4yd3j31b50o7al2.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbgvsjj30ki0d5adb.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbiqj5j30zj09ejxj.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbpnm3j30ch02xdg6.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbv9y6j30nm0apgqb.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gbwf9nj319v0k4jyk.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcagk5j30ze0ozqb2.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcl28pj315c0kt7kp.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcbqy7j30tu01sq40.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcdma0j30j109c758.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gd6ugzj317t0fu466.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gcxmhfj319y0kogsf.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gda8jqj31an0hydls.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge69zwj31bp0nd7gt.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gd9jygj311u0l47jd.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdp6eoj316e0ksqb2.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdep42j30gz09sdh6.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdg2hdj30vu06kdi0.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge8fvdj31a70h8qcp.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdjfx7j30a90aujro.jpg">
+<meta property="og:image" content="c:/Users/谢承兴/Desktop/md笔记/图片/cs231n_2017_lecture7.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gev09yj31ch0q3gta.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gdusm0j30iq0exmz4.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge2zj8j314q0k447j.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ge7uthj313a0jgk0m.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf20pej31gd0i1gto.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfii0aj318k0ootl3.jpg">
+<meta property="og:image" content="c:/Users/谢承兴/Desktop/优化算法.gif">
+<meta property="og:image" content="c:/Users/谢承兴/Desktop/优化算法图二.gif">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf2vovj30on0bydiq.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfc6y6j31g50p2dol.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf5rhfj30lk09tq48.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gf5rhfj30lk09tq48.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gfvyjmj31h90ngdpr.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggjutuj31270lzgv5.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggx0vuj31h20prq9t.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggb7wqj31330hgk42.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggfza5j31hc0q44fd.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gg0x6sj313f0juql7.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gglie4j313w0jn7m5.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ggbp05j314g0isn7o.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjbww9j30i40i4gqs.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjm9opj31070iywpq.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gj6jf3j314i0cxq8o.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gj5j70j30mb0dpmyn.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjggg2j30yx0este3.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjtafyj31h30oejzi.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk58unj31fd0hp7fc.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjlwlcj30n90cp42t.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk13kdj30nv0atwhu.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk144fj30om0c2425.jpg">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3940902-5519b489e581557a.png">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=H%5Ctimes+W">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7+%5Ctimes+7">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=7%5Ctimes+7%5Ctimes+C">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=20%5Ctimes+4">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gjxmk2j30kx05pwfl.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gk3c4mj30ou0c6wi5.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkw7x9j31av0kxjxn.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkrlzhj30yj0kudl2.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkclldj313k0e4ai6.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gkf7g3j30ye0din5t.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6glct9bj318r0nzdpj.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6gl29sjj31b80bf7as.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6ysjpxtj314e0d649m.jpg">
+<meta property="og:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6yivvt6j31fl0megus.jpg">
+<meta property="article:published_time" content="2022-08-07T05:31:36.000Z">
+<meta property="article:modified_time" content="2022-08-07T06:36:40.968Z">
+<meta property="article:author" content="yitianlian">
+<meta property="article:tag" content="CS231n">
+<meta property="article:tag" content="get state">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tva1.sinaimg.cn/large/00854KaOly1h4y6g4jh80j31eh0lx47p.jpg">
+  
+    <link rel="alternate" href="/project/atom.xml" title="一捧易天莲的碎碎念" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
 
-    <script>window.searchDbPath = "/project/search.xml";</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
 <meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/project/css/prism-tomorrow.css" type="text/css"></head>
 
-<body class="loading">
-    <span id="config-title" style="display:none">一捧易天莲的碎碎念</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yitianlian.github.io/project"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">CS231n 课程笔记大纲</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">一捧易天莲的碎碎念</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/project/" id="subtitle">yitianlian</a>
+        </h2>
+      
     </div>
-    <div class="scrollbar"></div>
-</div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yitianlian.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">CS231n 课程笔记大纲</h1>
-        <div class="stuff">
-            <span>八月 07, 2022</span>
-            
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/project/tags/CS231n/" rel="tag">CS231n</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/project/tags/get-state/" rel="tag">get state</a></li></ul>
+      <div class="outer">
+        <section id="main"><article id="post-CS231n-课程笔记大纲" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/" class="article-date">
+  <time class="dt-published" datetime="2022-08-07T05:31:36.000Z" itemprop="datePublished">2022-08-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/deep-learning/">deep learning</a>
+  </div>
 
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      CS231n 课程笔记大纲
+    </h1>
+  
 
-        </div>
-        <div class="content markdown">
-            <h1 id="名词定义"><a href="#名词定义" class="headerlink" title="名词定义"></a>名词定义</h1><h2 id="饱和神经元："><a href="#饱和神经元：" class="headerlink" title="饱和神经元："></a>饱和神经元：</h2><p>饱和神经元(Saturated Neurons) 饱和神经元会使得梯<strong>度消失问题雪上加霜，</strong>假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯度较大，该神经元权重(w)和偏置(bias)的梯度也会趋近于0，导致参数无法得到有效更新。</p>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="名词定义"><a href="#名词定义" class="headerlink" title="名词定义"></a>名词定义</h1><h2 id="饱和神经元："><a href="#饱和神经元：" class="headerlink" title="饱和神经元："></a>饱和神经元：</h2><p>饱和神经元(Saturated Neurons) 饱和神经元会使得梯<strong>度消失问题雪上加霜，</strong>假设神经元输入Sigmoid的值特别大或特别小，对应的梯度约等于0，即使从上一步传导来的梯度较大，该神经元权重(w)和偏置(bias)的梯度也会趋近于0，导致参数无法得到有效更新。</p>
 <h2 id="dead-relu："><a href="#dead-relu：" class="headerlink" title="dead relu："></a>dead relu：</h2><p>在训练过程中，由于一次梯度更新的幅度过大，导致某些Relu节点的权重调整的太大（让w&lt;0了），使得后续的训练对该节点不再起作用，这个节点相当于永久死亡（永远输出0）了。</p>
 <h2 id="梯度消失"><a href="#梯度消失" class="headerlink" title="梯度消失"></a>梯度消失</h2><p>全连接网络中，如果我们选择的激活函数是sigmod，那么越deep，就越容易发生梯度消失的情况。</p>
 <p>梯度消失的直观解释:</p>
@@ -515,117 +654,148 @@ learning_rate<span class="token operator">=</span><span class="token number">1e<
 <li><strong>185.199.111.153</strong></li>
 </ul>
 
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
-            
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                        
-                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
-                        
-                    
-                </ul>
-            
-        </div>
-        
-        
-    <div id="gitalk-container" class="comment link"
-		data-enable="false"
-        data-ae="false"
-        data-ci=""
-        data-cs=""
-        data-r=""
-        data-o=""
-        data-a=""
-        data-d="false"
-    >查看评论</div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yitianlian.github.io/project/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/" data-id="cl6izs5cl0003mktufc7i5syn" data-title="CS231n 课程笔记大纲" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/CS231n/" rel="tag">CS231n</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/get-state/" rel="tag">get state</a></li></ul>
 
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/project/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">神经网络初始化指定种子</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/project/categories/deep-learning/">deep learning</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/CS231n/" rel="tag">CS231n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/building-blog/" rel="tag">building blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/get-state/" rel="tag">get state</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/git/" rel="tag">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/pytorch/" rel="tag">pytorch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/random/" rel="tag">random</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/project/tags/CS231n/" style="font-size: 10px;">CS231n</a> <a href="/project/tags/building-blog/" style="font-size: 10px;">building blog</a> <a href="/project/tags/get-state/" style="font-size: 10px;">get state</a> <a href="/project/tags/git/" style="font-size: 10px;">git</a> <a href="/project/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/project/tags/pytorch/" style="font-size: 10px;">pytorch</a> <a href="/project/tags/random/" style="font-size: 10px;">random</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/08/">八月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2022/08/07/CS231n-%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0%E5%A4%A7%E7%BA%B2/">CS231n 课程笔记大纲</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/08/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E6%8C%87%E5%AE%9A%E7%A7%8D%E5%AD%90/">神经网络初始化指定种子</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/">使用hexo+GitHub构建博客时无法更新的问题</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/08/06/Hello-World-0/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/08/06/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 yitianlian<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
 
     </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
-        <div class="side">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E5%AE%9A%E4%B9%89"><span class="toc-number">1.</span> <span class="toc-text">名词定义</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A5%B1%E5%92%8C%E7%A5%9E%E7%BB%8F%E5%85%83%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">饱和神经元：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dead-relu%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">dead relu：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E6%B6%88%E5%A4%B1"><span class="toc-number">1.3.</span> <span class="toc-text">梯度消失</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#knn"><span class="toc-number">2.</span> <span class="toc-text">knn</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text">线性分类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#svm%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">svm函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">正则化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96"><span class="toc-number">4.3.</span> <span class="toc-text">优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD"><span class="toc-number">5.</span> <span class="toc-text">反向传播</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#sigmoid%E5%87%BD%E6%95%B0%E5%AF%BC%E6%95%B0"><span class="toc-number">5.1.</span> <span class="toc-text">sigmoid函数导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E5%8F%AF%E6%AF%94%E7%9F%A9%E9%98%B5"><span class="toc-number">5.2.</span> <span class="toc-text">雅可比矩阵</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">6.</span> <span class="toc-text">神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">6.1.</span> <span class="toc-text">激活函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">6.2.</span> <span class="toc-text">三层神经网络</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CCNN"><span class="toc-number">7.</span> <span class="toc-text">卷积神经网络CNN</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%9A%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">训练神经网络：激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0-1"><span class="toc-number">8.1.</span> <span class="toc-text">激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sigmoid%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.1.</span> <span class="toc-text">sigmoid函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tanh%E5%87%BD%E6%95%B0"><span class="toc-number">8.1.2.</span> <span class="toc-text">tanh函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#relu%E5%87%BD%E6%95%B0-f-x3D-max-0-x"><span class="toc-number">8.1.3.</span> <span class="toc-text">relu函数(f&#x3D;max(0,x))</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#leaky-relu"><span class="toc-number">8.1.4.</span> <span class="toc-text">leaky relu</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ELU"><span class="toc-number">8.1.5.</span> <span class="toc-text">ELU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maxout-neuron"><span class="toc-number">8.1.6.</span> <span class="toc-text">maxout neuron</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-number">8.2.</span> <span class="toc-text">数据预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">8.3.</span> <span class="toc-text">权重初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%B9%E9%87%8F%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">8.4.</span> <span class="toc-text">批量归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E7%9B%91%E6%8E%A7"><span class="toc-number">8.5.</span> <span class="toc-text">训练过程监控</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96"><span class="toc-number">8.6.</span> <span class="toc-text">超参数优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">9.</span> <span class="toc-text">更好的优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BD%95%E8%A6%81%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-number">9.1.</span> <span class="toc-text">为何要归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%8A%A0fancy%E7%9A%84%E4%BC%98%E5%8C%96%E6%96%B9%E5%BC%8F"><span class="toc-number">9.2.</span> <span class="toc-text">更加fancy的优化方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="toc-number">9.2.1.</span> <span class="toc-text">1.梯度下降</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D-momentum%EF%BC%88%E5%8A%A8%E9%87%8F%EF%BC%89"><span class="toc-number">9.2.2.</span> <span class="toc-text">2.随机梯度下降+momentum（动量）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-nesterov-momentum%EF%BC%9A"><span class="toc-number">9.2.3.</span> <span class="toc-text">3.nesterov momentum：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-AdaGrad%EF%BC%88%E4%B8%8D%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="toc-number">9.2.4.</span> <span class="toc-text">4.AdaGrad（不使用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-RMSProp"><span class="toc-number">9.2.5.</span> <span class="toc-text">5.RMSProp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Adam%EF%BC%88%E7%BB%93%E5%90%88%E4%B8%A4%E8%80%85%E5%A5%BD%E5%A4%84%EF%BC%89"><span class="toc-number">9.2.6.</span> <span class="toc-text">6.Adam（结合两者好处）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AD%A6%E4%B9%A0%E7%8E%87"><span class="toc-number">9.2.7.</span> <span class="toc-text">7.学习率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E7%89%9B%E9%A1%BF%E6%B3%95%E5%92%8C%E6%8B%9F%E7%89%9B%E9%A1%BF%E6%B3%95"><span class="toc-number">9.2.8.</span> <span class="toc-text">8.牛顿法和拟牛顿法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#L-BFGS"><span class="toc-number">9.2.9.</span> <span class="toc-text">L-BFGS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E6%95%88%E6%9E%9C"><span class="toc-number">9.3.</span> <span class="toc-text">模型总效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96-1"><span class="toc-number">9.4.</span> <span class="toc-text">正则化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dropout"><span class="toc-number">9.4.1.</span> <span class="toc-text">dropout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#batch-normalization"><span class="toc-number">9.4.2.</span> <span class="toc-text">batch normalization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-number">9.4.3.</span> <span class="toc-text">数据增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dropconnect"><span class="toc-number">9.4.4.</span> <span class="toc-text">dropconnect</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fational-max-pooling"><span class="toc-number">9.4.5.</span> <span class="toc-text">fational max pooling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B7%B1%E5%BA%A6"><span class="toc-number">9.4.6.</span> <span class="toc-text">随机深度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="toc-number">9.5.</span> <span class="toc-text">迁移学习</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E5%92%8C%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2"><span class="toc-number">10.</span> <span class="toc-text">图像目标检测和图像分割</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2"><span class="toc-number">10.1.</span> <span class="toc-text">语义分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%E5%92%8C%E5%AE%9A%E4%BD%8D%EF%BC%88classification-and-location"><span class="toc-number">10.2.</span> <span class="toc-text">分类和定位（classification and location</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E4%BD%93%E8%AF%86%E5%88%AB"><span class="toc-number">10.3.</span> <span class="toc-text">物体识别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fast-r-cnn"><span class="toc-number">10.3.1.</span> <span class="toc-text">fast r-cnn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#YOLO%E6%A8%A1%E5%9E%8B"><span class="toc-number">10.4.</span> <span class="toc-text">YOLO模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSD%E6%A8%A1%E5%9E%8B"><span class="toc-number">10.5.</span> <span class="toc-text">SSD模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dense-Caption"><span class="toc-number">10.6.</span> <span class="toc-text">Dense Caption</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instance-Segmentation"><span class="toc-number">10.7.</span> <span class="toc-text">Instance Segmentation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mask-R-CNN"><span class="toc-number">10.8.</span> <span class="toc-text">Mask R-CNN</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E7%90%86%E8%A7%A3"><span class="toc-number">11.</span> <span class="toc-text">可视化和理解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="toc-number">12.</span> <span class="toc-text">生成模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#pixelRNN-AND-PixelCNN"><span class="toc-number">12.1.</span> <span class="toc-text">pixelRNN AND PixelCNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GAN"><span class="toc-number">12.2.</span> <span class="toc-text">GAN</span></a></li></ol></li></ol>
-        </div>
-    
-</div>
 
 
-    </div>
-</div>
+<script src="/project/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
 </body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/project/js/plugin.js"></script>
-<script src="/project/js/typed.js"></script>
-<script src="/project/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/project/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/project/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/project/photoswipe/photoswipe.min.js"></script>
-<script src="/project/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
 </html>
