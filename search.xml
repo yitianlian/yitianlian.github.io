@@ -2,11 +2,6 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2022/08/06/Hello-World-0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
     <url>/2022/08/06/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
@@ -22,6 +17,257 @@
 </code></pre>
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>latex中插入代码</title>
+    <url>/2022/08/07/latex%E4%B8%AD%E6%8F%92%E5%85%A5%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="如何在latex中添加代码模块"><a href="#如何在latex中添加代码模块" class="headerlink" title="如何在latex中添加代码模块"></a>如何在latex中添加代码模块</h1><h2 id="首先在开头导入以下的包"><a href="#首先在开头导入以下的包" class="headerlink" title="首先在开头导入以下的包"></a>首先在开头导入以下的包</h2><pre class=" language-latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">&amp;</span>#123;listings<span class="token punctuation">&amp;</span>#125;
+<span class="token function selector">\usepackage</span><span class="token punctuation">&amp;</span>#123;ctex<span class="token punctuation">&amp;</span>#125;
+
+<span class="token comment" spellcheck="true">% 用来设置附录中代码的样式</span>
+
+<span class="token function selector">\lstset</span><span class="token punctuation">&amp;</span>#123;
+    basicstyle          =   <span class="token function selector">\sffamily</span>,          <span class="token comment" spellcheck="true">% 基本代码风格</span>
+    keywordstyle        =   <span class="token function selector">\bfseries</span>,          <span class="token comment" spellcheck="true">% 关键字风格</span>
+    commentstyle        =   <span class="token function selector">\rmfamily</span><span class="token function selector">\itshape</span>,  <span class="token comment" spellcheck="true">% 注释的风格，斜体</span>
+    stringstyle         =   <span class="token function selector">\ttfamily</span>,  <span class="token comment" spellcheck="true">% 字符串风格</span>
+    flexiblecolumns,                <span class="token comment" spellcheck="true">% 别问为什么，加上这个</span>
+    numbers             =   left,   <span class="token comment" spellcheck="true">% 行号的位置在左边</span>
+    showspaces          =   false,  <span class="token comment" spellcheck="true">% 是否显示空格，显示了有点乱，所以不现实了</span>
+    numberstyle         =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,    <span class="token comment" spellcheck="true">% 行号的样式，小五号，tt等宽字体</span>
+    showstringspaces    =   false,
+    captionpos          =   t,      <span class="token comment" spellcheck="true">% 这段代码的名字所呈现的位置，t指的是top上面</span>
+    frame               =   lrtb,   <span class="token comment" spellcheck="true">% 显示边框</span>
+<span class="token punctuation">&amp;</span>#125;
+
+<span class="token function selector">\lstdefinestyle</span><span class="token punctuation">&amp;</span>#123;Python<span class="token punctuation">&amp;</span>#125;<span class="token punctuation">&amp;</span>#123;
+    language        =   Python, <span class="token comment" spellcheck="true">% 语言选Python</span>
+    basicstyle      =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    numberstyle     =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    keywordstyle    =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;blue<span class="token punctuation">&amp;</span>#125;,
+    keywordstyle    =   <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;teal<span class="token punctuation">&amp;</span>#125;,
+    stringstyle     =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;magenta<span class="token punctuation">&amp;</span>#125;,
+    commentstyle    =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;red<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    breaklines      =   true,   <span class="token comment" spellcheck="true">% 自动换行，建议不要写太长的行</span>
+    columns         =   fixed,  <span class="token comment" spellcheck="true">% 如果不加这一句，字间距就不固定，很丑，必须加</span>
+    basewidth       =   0.5em,
+<span class="token punctuation">&amp;</span>#125;
+</code></pre>
+<p>然后在需要添加代码的位置添加</p>
+<pre class=" language-latex"><code class="language-latex"><span class="token function selector">\lstinputlisting</span><span class="token punctuation">[</span>
+    style       =   Python,
+    caption     =   <span class="token punctuation">&amp;</span>#123;<span class="token function selector">\bf</span> ff.py<span class="token punctuation">&amp;</span>#125;,
+    label       =   <span class="token punctuation">&amp;</span>#123;ff.py<span class="token punctuation">&amp;</span>#125;
+<span class="token punctuation">]</span><span class="token punctuation">&amp;</span>#123;../src/duke/ff.py<span class="token punctuation">&amp;</span>#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用hexo+GitHub构建博客时无法更新的问题</title>
+    <url>/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="Question1，部署不更新"><a href="#Question1，部署不更新" class="headerlink" title="Question1，部署不更新"></a>Question1，部署不更新</h1><p>离线预览的时候没有问题，但是在线的网站一直没有更新，之前查阅过很多其他的资料，一直没有找到解决方案，最后自己摸索找到了不更新的原因：</p>
+<ol>
+<li>我发现我的blog是建立在一个名称为main的分支上的，使用的是main分支上的index.html文件，但是我使用npm和hexo部署的blog是push到master分支上的，且由于我default的分支是main的分支，所以导致了我的博客一直不更新：</li>
+</ol>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4yldq4mc2j31gh0ceqaz.jpg" alt="这张图是我修改后的图，原来这张图上branch是有两个的"></p>
+<p>这张图是我修改后的图，原来这张图上branch是有两个的，一个是main，一个是maser，且main是default</p>
+<ol start="2">
+<li><p>对此，我修改了default的分支，把master设置为default，但是博客依旧不更新</p>
+</li>
+<li><p>解决方法：</p>
+<p>我删除了main的分支（这里会导致你博客页面变成404，但是没有关系</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4yldq4c16j30z90jxk1z.jpg" alt="image-20220807154418275"></p>
+</li>
+</ol>
+<p>​	在你自己的blog文件夹下，重新使用</p>
+<pre class=" language-shell"><code class="language-shell">hexo init blog
+</code></pre>
+<p>初始化自己的blog</p>
+<p>然后再对于_config.yml文件中，deploy一栏修改为master</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4yldq2eswj30m804pmz7.jpg" alt="image-20220807154553189"></p>
+<p>最后成功解决</p>
+<h1 id="Question-2-部署后样式全部消失，变成只有文字的白板"><a href="#Question-2-部署后样式全部消失，变成只有文字的白板" class="headerlink" title="Question 2 部署后样式全部消失，变成只有文字的白板"></a>Question 2 部署后样式全部消失，变成只有文字的白板</h1><p>先按住f12，看看是否是很多资源没有加载出来，如果是，则和我是同一种情况：</p>
+<p>这种情况大多数都是因为你的url和root之间没有匹配上</p>
+<p>经过修改后，我的_config.yml</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4yldq4h5qj311609o79s.jpg" alt="image-20220807211827876"></p>
+<p>我修改成如图所示就没有问题了。</p>
+<h1 id="Question3-修改主题后，部署后的主题没有改变"><a href="#Question3-修改主题后，部署后的主题没有改变" class="headerlink" title="Question3 修改主题后，部署后的主题没有改变"></a>Question3 修改主题后，部署后的主题没有改变</h1><p>我发现有时候hexo d后，终端显示成功，github页面上面没有显示commit，所以我就多交了几次，就成功了。</p>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+        <tag>building blog</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>制作voc格式的数据集</title>
+    <url>/2022/08/07/%E5%88%B6%E4%BD%9Cvoc%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86/</url>
+    <content><![CDATA[<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>先通过labelme在图片上打好标签，生成对应的json文件</p>
+<p><img src="http://tva1.sinaimg.cn/large/00854KaOly1h4ym2do051j30mc096gpo.jpg" alt="image-20220420204741262.png"></p>
+<p>然后需要执行labelme中的json_to_dataset.py文件</p>
+<p>我的路径是这个E:\anaconda\envs\labelme\Lib\site-packages\labelme\cli  我是安装在一个叫做labelme的虚拟环境中的，因此需要在虚拟环境的Lib中找site-packages，其他可以根据自己的情况所定你。</p>
+<h2 id="第二步：修改json-to-dataset-py文件"><a href="#第二步：修改json-to-dataset-py文件" class="headerlink" title="第二步：修改json_to_dataset.py文件"></a>第二步：修改json_to_dataset.py文件</h2><p>直接替换为</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> argparse
+<span class="token keyword">import</span> base64
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> os<span class="token punctuation">.</span>path <span class="token keyword">as</span> osp
+
+<span class="token keyword">import</span> imgviz
+<span class="token keyword">import</span> PIL<span class="token punctuation">.</span>Image
+
+<span class="token keyword">from</span> labelme<span class="token punctuation">.</span>logger <span class="token keyword">import</span> logger
+<span class="token keyword">from</span> labelme <span class="token keyword">import</span> utils
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span>
+        <span class="token string">"This script is aimed to demonstrate how to convert the "</span>
+        <span class="token string">"JSON file to a single image dataset."</span>
+    <span class="token punctuation">)</span>
+    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span>
+        <span class="token string">"It won't handle multiple JSON files to generate a "</span>
+        <span class="token string">"real-use dataset."</span>
+    <span class="token punctuation">)</span>
+
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"json_file"</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-o"</span><span class="token punctuation">,</span> <span class="token string">"--out"</span><span class="token punctuation">,</span> default<span class="token operator">=</span>None<span class="token punctuation">)</span>
+    args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    json_file <span class="token operator">=</span> args<span class="token punctuation">.</span>json_file
+
+    file_name <span class="token operator">=</span> json_file<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">if</span> args<span class="token punctuation">.</span>out <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+        out_dir <span class="token operator">=</span> osp<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">,</span> <span class="token string">"_"</span><span class="token punctuation">)</span>
+        out_dir <span class="token operator">=</span> osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span><span class="token punctuation">,</span> out_dir<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        out_dir <span class="token operator">=</span> args<span class="token punctuation">.</span>out
+    <span class="token keyword">if</span> <span class="token operator">not</span> osp<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>out_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>out_dir<span class="token punctuation">)</span>
+
+    data <span class="token operator">=</span> json<span class="token punctuation">.</span>load<span class="token punctuation">(</span>open<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    imageData <span class="token operator">=</span> data<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"imageData"</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token operator">not</span> imageData<span class="token punctuation">:</span>
+        imagePath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>json_file<span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"imagePath"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">with</span> open<span class="token punctuation">(</span>imagePath<span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+            imageData <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            imageData <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>imageData<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
+    img <span class="token operator">=</span> utils<span class="token punctuation">.</span>img_b64_to_arr<span class="token punctuation">(</span>imageData<span class="token punctuation">)</span>
+
+    label_name_to_value <span class="token operator">=</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;"_background_": 0&amp;#125;</span>
+    <span class="token keyword">for</span> shape <span class="token keyword">in</span> sorted<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">"shapes"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x<span class="token punctuation">[</span><span class="token string">"label"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        label_name <span class="token operator">=</span> shape<span class="token punctuation">[</span><span class="token string">"label"</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> label_name <span class="token keyword">in</span> label_name_to_value<span class="token punctuation">:</span>
+            label_value <span class="token operator">=</span> label_name_to_value<span class="token punctuation">[</span>label_name<span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            label_value <span class="token operator">=</span> len<span class="token punctuation">(</span>label_name_to_value<span class="token punctuation">)</span>
+            label_name_to_value<span class="token punctuation">[</span>label_name<span class="token punctuation">]</span> <span class="token operator">=</span> label_value
+    lbl<span class="token punctuation">,</span> _ <span class="token operator">=</span> utils<span class="token punctuation">.</span>shapes_to_label<span class="token punctuation">(</span>
+        img<span class="token punctuation">.</span>shape<span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token string">"shapes"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label_name_to_value
+    <span class="token punctuation">)</span>
+
+    label_names <span class="token operator">=</span> <span class="token punctuation">[</span>None<span class="token punctuation">]</span> <span class="token operator">*</span> <span class="token punctuation">(</span>max<span class="token punctuation">(</span>label_name_to_value<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> name<span class="token punctuation">,</span> value <span class="token keyword">in</span> label_name_to_value<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        label_names<span class="token punctuation">[</span>value<span class="token punctuation">]</span> <span class="token operator">=</span> name
+
+    lbl_viz <span class="token operator">=</span> imgviz<span class="token punctuation">.</span>label2rgb<span class="token punctuation">(</span>
+        label<span class="token operator">=</span>lbl<span class="token punctuation">,</span> img<span class="token operator">=</span>imgviz<span class="token punctuation">.</span>asgray<span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">,</span> label_names<span class="token operator">=</span>label_names<span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"rb"</span>
+    <span class="token punctuation">)</span>
+
+    PIL<span class="token punctuation">.</span>Image<span class="token punctuation">.</span>fromarray<span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">.</span>save<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>out_dir<span class="token punctuation">,</span> file_name <span class="token operator">+</span> <span class="token string">".png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    utils<span class="token punctuation">.</span>lblsave<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>out_dir<span class="token punctuation">,</span> file_name <span class="token operator">+</span> <span class="token string">"_label.png"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lbl<span class="token punctuation">)</span>
+    PIL<span class="token punctuation">.</span>Image<span class="token punctuation">.</span>fromarray<span class="token punctuation">(</span>lbl_viz<span class="token punctuation">)</span><span class="token punctuation">.</span>save<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>out_dir<span class="token punctuation">,</span> file_name <span class="token operator">+</span> <span class="token string">"_label_viz.png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span>osp<span class="token punctuation">.</span>join<span class="token punctuation">(</span>out_dir<span class="token punctuation">,</span> file_name <span class="token operator">+</span> <span class="token string">"_label_names.txt"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">"w"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> lbl_name <span class="token keyword">in</span> label_names<span class="token punctuation">:</span>
+            f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>lbl_name <span class="token operator">+</span> <span class="token string">"\n"</span><span class="token punctuation">)</span>
+
+    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"Saved to: &amp;#123;&amp;#125;"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>out_dir<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre>
+<p>中间遇到问题：<br>TypeError: label2rgb() got an unexpected keyword argument ‘img’</p>
+<p>解决方法：</p>
+<p>imgviz 版本问题，1.5.0有问题，1.2.0测试没问题</p>
+<p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> imgviz&#x3D;&#x3D;1.2.0</p>
+<p>然后运行下面的代码</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># coding:utf-8</span>
+<span class="token keyword">import</span> os
+
+path <span class="token operator">=</span> <span class="token string">""</span>  <span class="token comment" spellcheck="true"># path是你存放json的路径</span>
+json_file <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">get_file_path_by_name</span><span class="token punctuation">(</span>file_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">'''
+    获取指定路径下所有文件的绝对路径
+    :param file_dir:
+    :return:
+    '''</span>
+    L <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> root<span class="token punctuation">,</span> dirs<span class="token punctuation">,</span> files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>file_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 获取所有文件</span>
+        <span class="token keyword">for</span> file <span class="token keyword">in</span> files<span class="token punctuation">:</span>  <span class="token comment" spellcheck="true"># 遍历所有文件名</span>
+            <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>splitext<span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.json'</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true"># 指定尾缀  ***重要***</span>
+                L<span class="token punctuation">.</span>append<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>root<span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 拼接处绝对路径并放入列表</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'总文件数目：'</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>L<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> L
+
+list_dir <span class="token operator">=</span> get_file_path_by_name<span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+saving_dataset_dir <span class="token operator">=</span> path
+<span class="token keyword">for</span> target_json_path <span class="token keyword">in</span> list_dir<span class="token punctuation">:</span>
+    os<span class="token punctuation">.</span>system<span class="token punctuation">(</span><span class="token string">"labelme_json_to_dataset.exe %s"</span> <span class="token operator">%</span>target_json_path <span class="token operator">+</span> <span class="token string">' -o %s'</span> <span class="token operator">%</span>saving_dataset_dir<span class="token punctuation">)</span>
+</code></pre>
+<p>这样就好了</p>
+]]></content>
+      <categories>
+        <category>deep learning</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>mmlab</tag>
+        <tag>datasets</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>梯度截断代码</title>
+    <url>/2022/08/07/%E6%A2%AF%E5%BA%A6%E6%88%AA%E6%96%AD%E4%BB%A3%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="梯度截断代码"><a href="#梯度截断代码" class="headerlink" title="梯度截断代码"></a>梯度截断代码</h1><p>需要添加在loss反向传播后，optimizer.step()前</p>
+<p>将梯度裁剪到-grad_clip和grad_clip之间</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">clip_gradient</span><span class="token punctuation">(</span>optimizer<span class="token punctuation">,</span> grad_clip<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Clips gradients computed during backpropagation to avoid explosion of gradients.
+
+    :param optimizer: optimizer with the gradients to be clipped
+    :param grad_clip: clip value
+    """</span>
+    <span class="token keyword">for</span> group <span class="token keyword">in</span> optimizer<span class="token punctuation">.</span>param_groups<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> param <span class="token keyword">in</span> group<span class="token punctuation">[</span><span class="token string">"params"</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> param<span class="token punctuation">.</span>grad <span class="token keyword">is</span> <span class="token operator">not</span> None<span class="token punctuation">:</span>
+                param<span class="token punctuation">.</span>grad<span class="token punctuation">.</span>data<span class="token punctuation">.</span>clamp_<span class="token punctuation">(</span><span class="token operator">-</span>grad_clip<span class="token punctuation">,</span> grad_clip<span class="token punctuation">)</span>
+
+</code></pre>
+<p>或者</p>
+<pre class=" language-python"><code class="language-python">            nn<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>clip_grad_norm_<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> max_norm<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> norm_type<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+</code></pre>
+]]></content>
+      <categories>
+        <category>python</category>
+        <category>deep learning</category>
+      </categories>
+      <tags>
+        <tag>tricks</tag>
+      </tags>
   </entry>
   <entry>
     <title>CS231n 课程笔记大纲</title>
@@ -478,16 +724,6 @@ learning_rate<span class="token operator">=</span><span class="token number">1e<
       <tags>
         <tag>CS231n</tag>
         <tag>get state</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用hexo+GitHub构建博客时无法更新的问题</title>
-    <url>/2022/08/06/%E4%BD%BF%E7%94%A8hexo-GitHub%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%97%B6%E6%97%A0%E6%B3%95%E6%9B%B4%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>hexo</tag>
-        <tag>building blog</tag>
-        <tag>git</tag>
       </tags>
   </entry>
   <entry>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>latex中插入代码 - 一捧易天莲的碎碎念</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="yitianlian,"> 
+    <meta name="description" content="记录美好生活,如何在latex中添加代码模块首先在开头导入以下的包\usepackage&amp;amp;#123;listings&amp;amp;#125;
+\usepackage&amp;amp;#123;ctex&amp;amp;#12,"> 
+    <meta name="author" content="yitianlian"> 
+    <link rel="alternative" href="atom.xml" title="一捧易天莲的碎碎念" type="application/atom+xml"> 
+    <link rel="icon" href="/img/bitbug_favicon.ico"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="latex中插入代码 - 一捧易天莲的碎碎念"/>
+    <meta name="twitter:description" content="记录美好生活,如何在latex中添加代码模块首先在开头导入以下的包\usepackage&amp;amp;#123;listings&amp;amp;#125;
+\usepackage&amp;amp;#123;ctex&amp;amp;#12,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="一捧易天莲的碎碎念"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="latex中插入代码 - 一捧易天莲的碎碎念"/>
+    <meta property="og:description" content="记录美好生活,如何在latex中添加代码模块首先在开头导入以下的包\usepackage&amp;amp;#123;listings&amp;amp;#125;
+\usepackage&amp;amp;#123;ctex&amp;amp;#12,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 6.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">一捧易天莲的碎碎念</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://yitianlian.github.io/project"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">latex中插入代码</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">latex中插入代码</h1>
+        <div class="stuff">
+            <span>八月 07, 2022</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/latex/" rel="tag">latex</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="如何在latex中添加代码模块"><a href="#如何在latex中添加代码模块" class="headerlink" title="如何在latex中添加代码模块"></a>如何在latex中添加代码模块</h1><h2 id="首先在开头导入以下的包"><a href="#首先在开头导入以下的包" class="headerlink" title="首先在开头导入以下的包"></a>首先在开头导入以下的包</h2><pre class=" language-latex"><code class="language-latex"><span class="token function selector">\usepackage</span><span class="token punctuation">&amp;</span>#123;listings<span class="token punctuation">&amp;</span>#125;
+<span class="token function selector">\usepackage</span><span class="token punctuation">&amp;</span>#123;ctex<span class="token punctuation">&amp;</span>#125;
+
+<span class="token comment" spellcheck="true">% 用来设置附录中代码的样式</span>
+
+<span class="token function selector">\lstset</span><span class="token punctuation">&amp;</span>#123;
+    basicstyle          =   <span class="token function selector">\sffamily</span>,          <span class="token comment" spellcheck="true">% 基本代码风格</span>
+    keywordstyle        =   <span class="token function selector">\bfseries</span>,          <span class="token comment" spellcheck="true">% 关键字风格</span>
+    commentstyle        =   <span class="token function selector">\rmfamily</span><span class="token function selector">\itshape</span>,  <span class="token comment" spellcheck="true">% 注释的风格，斜体</span>
+    stringstyle         =   <span class="token function selector">\ttfamily</span>,  <span class="token comment" spellcheck="true">% 字符串风格</span>
+    flexiblecolumns,                <span class="token comment" spellcheck="true">% 别问为什么，加上这个</span>
+    numbers             =   left,   <span class="token comment" spellcheck="true">% 行号的位置在左边</span>
+    showspaces          =   false,  <span class="token comment" spellcheck="true">% 是否显示空格，显示了有点乱，所以不现实了</span>
+    numberstyle         =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,    <span class="token comment" spellcheck="true">% 行号的样式，小五号，tt等宽字体</span>
+    showstringspaces    =   false,
+    captionpos          =   t,      <span class="token comment" spellcheck="true">% 这段代码的名字所呈现的位置，t指的是top上面</span>
+    frame               =   lrtb,   <span class="token comment" spellcheck="true">% 显示边框</span>
+<span class="token punctuation">&amp;</span>#125;
+
+<span class="token function selector">\lstdefinestyle</span><span class="token punctuation">&amp;</span>#123;Python<span class="token punctuation">&amp;</span>#125;<span class="token punctuation">&amp;</span>#123;
+    language        =   Python, <span class="token comment" spellcheck="true">% 语言选Python</span>
+    basicstyle      =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    numberstyle     =   <span class="token function selector">\zihao</span><span class="token punctuation">&amp;</span>#123;-5<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    keywordstyle    =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;blue<span class="token punctuation">&amp;</span>#125;,
+    keywordstyle    =   <span class="token punctuation">[</span>2<span class="token punctuation">]</span> <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;teal<span class="token punctuation">&amp;</span>#125;,
+    stringstyle     =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;magenta<span class="token punctuation">&amp;</span>#125;,
+    commentstyle    =   <span class="token function selector">\color</span><span class="token punctuation">&amp;</span>#123;red<span class="token punctuation">&amp;</span>#125;<span class="token function selector">\ttfamily</span>,
+    breaklines      =   true,   <span class="token comment" spellcheck="true">% 自动换行，建议不要写太长的行</span>
+    columns         =   fixed,  <span class="token comment" spellcheck="true">% 如果不加这一句，字间距就不固定，很丑，必须加</span>
+    basewidth       =   0.5em,
+<span class="token punctuation">&amp;</span>#125;
+</code></pre>
+<p>然后在需要添加代码的位置添加</p>
+<pre class=" language-latex"><code class="language-latex"><span class="token function selector">\lstinputlisting</span><span class="token punctuation">[</span>
+    style       =   Python,
+    caption     =   <span class="token punctuation">&amp;</span>#123;<span class="token function selector">\bf</span> ff.py<span class="token punctuation">&amp;</span>#125;,
+    label       =   <span class="token punctuation">&amp;</span>#123;ff.py<span class="token punctuation">&amp;</span>#125;
+<span class="token punctuation">]</span><span class="token punctuation">&amp;</span>#123;../src/duke/ff.py<span class="token punctuation">&amp;</span>#125;
+</code></pre>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title="0" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                        
+                            <li title="1" data-url="http://link.hhtjim.com/163/425570952.mp3"></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		data-enable="false"
+        data-ae="false"
+        data-ci=""
+        data-cs=""
+        data-r=""
+        data-o=""
+        data-a=""
+        data-d="false"
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class="side">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8latex%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%BB%A3%E7%A0%81%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">如何在latex中添加代码模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%9C%A8%E5%BC%80%E5%A4%B4%E5%AF%BC%E5%85%A5%E4%BB%A5%E4%B8%8B%E7%9A%84%E5%8C%85"><span class="toc-number">1.1.</span> <span class="toc-text">首先在开头导入以下的包</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
