@@ -5,12 +5,26 @@
     <link>https://yitianlian.github.io/publication/</link>
       <atom:link href="https://yitianlian.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 11 Mar 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yitianlian.github.io/media/icon_hub40895cd8cb45bdb19291010b22e725a_58887_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://yitianlian.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>TFRGAN Leveraging Text Information for Blind Face Restoration with Extreme Degradation</title>
+      <link>https://yitianlian.github.io/publication/preprint/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://yitianlian.github.io/publication/preprint/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;At present, the paper has not yet been published, and relevant materials will not be displayed.&lt;/p&gt;
+</description>
+    </item>
     
   </channel>
 </rss>
