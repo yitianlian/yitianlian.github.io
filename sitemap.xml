@@ -11,22 +11,38 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/publication-type/3/</loc>
-    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://yitianlian.github.io/publication/trust/</loc>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/publication_types/</loc>
-    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/publication/</loc>
-    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/tag/source-themes/</loc>
-    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/tags/</loc>
+    <lastmod>2024-03-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://yitianlian.github.io/post/blog-with-jupyter/</loc>
+    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://yitianlian.github.io/post/</loc>
+    <lastmod>2023-11-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://yitianlian.github.io/publication-type/1/</loc>
     <lastmod>2023-03-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -82,10 +98,6 @@
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://yitianlian.github.io/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://yitianlian.github.io/post/getting-started/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -102,19 +114,12 @@
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://yitianlian.github.io/post/jupyter/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://yitianlian.github.io/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://yitianlian.github.io/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://yitianlian.github.io/admin/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

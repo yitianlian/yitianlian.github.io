@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: March 18, 2023 --><html lang="en-us" >
+<!-- This site was created with Hugo Blox. https://hugoblox.com -->
+<!-- Last Published: February 5, 2024 --><html lang="en-us" >
 
 
 <head>
@@ -10,7 +10,7 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+    <meta name="generator" content="Hugo Blox Builder 5.9.6" />
   
 
   
@@ -73,14 +73,14 @@
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
 
   
   
   
     
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -95,6 +95,8 @@
 
     
     
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -215,7 +217,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.875ce354d76e6ab64542b609ad9faa20.css" />
+  <link rel="stylesheet" href="/css/wowchemy.2080eece17b8240c85ee7fcaa2d3865b.css" />
 
   
   
@@ -262,6 +264,7 @@
 
 
 
+
   
   
   
@@ -279,7 +282,7 @@
 
   
 
-<meta name="description" content="Create your slides in Markdown - click the Slides button to check out the example. At present, the paper has not yet been published, and relevant materials will not be displayed." />
+<meta name="description" content="Blind face restoration aims to recover high-quality face images from unknown degraded low-quality images. Previous works that are based on geometric or generative priors have achieved impressive performance, but the task remains challenging, particularly when it comes to restoring severely degraded faces. To address this issue, we propose a novel approach TFRGAN, that leverages textual information to improve the restoration of extremely degraded face images. Specifically, we propose to generate a better and more accurate latent code for StyleGAN2 prior via fusing the text and image information in the latent code space. Besides, extracted textual features are used to modulate the decoding features to obtain more realistic and natural facial images with more reasonable details. Experimental results demonstrate the superiority of the proposed method for restoring severely degraded face images." />
 
 
 
@@ -307,18 +310,25 @@
 
 
   
+  
 
 
 
 
 
 
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://yitianlian.github.io/publication/preprint/featured.jpg" />
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://yitianlian.github.io/media/icon_hub40895cd8cb45bdb19291010b22e725a_58887_512x512_fill_lanczos_center_3.png" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
 <meta property="og:site_name" content="CHENGXING XIE&#39;S WEBSITE" />
 <meta property="og:url" content="https://yitianlian.github.io/publication/preprint/" />
 <meta property="og:title" content="TFRGAN Leveraging Text Information for Blind Face Restoration with Extreme Degradation | CHENGXING XIE&#39;S WEBSITE" />
-<meta property="og:description" content="Create your slides in Markdown - click the Slides button to check out the example. At present, the paper has not yet been published, and relevant materials will not be displayed." /><meta property="og:image" content="https://yitianlian.github.io/publication/preprint/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:description" content="Blind face restoration aims to recover high-quality face images from unknown degraded low-quality images. Previous works that are based on geometric or generative priors have achieved impressive performance, but the task remains challenging, particularly when it comes to restoring severely degraded faces. To address this issue, we propose a novel approach TFRGAN, that leverages textual information to improve the restoration of extremely degraded face images. Specifically, we propose to generate a better and more accurate latent code for StyleGAN2 prior via fusing the text and image information in the latent code space. Besides, extracted textual features are used to modulate the decoding features to obtain more realistic and natural facial images with more reasonable details. Experimental results demonstrate the superiority of the proposed method for restoring severely degraded face images." /><meta property="og:image" content="https://yitianlian.github.io/media/icon_hub40895cd8cb45bdb19291010b22e725a_58887_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
 
   
     <meta
@@ -355,10 +365,6 @@
   },
   "headline": "TFRGAN Leveraging Text Information for Blind Face Restoration with Extreme Degradation",
   
-  "image": [
-    "https://yitianlian.github.io/publication/preprint/featured.jpg"
-  ],
-  
   "datePublished": "2023-03-11T00:00:00Z",
   "dateModified": "2023-03-11T00:00:00Z",
   
@@ -375,7 +381,7 @@
       "url": "https://yitianlian.github.io/media/icon_hub40895cd8cb45bdb19291010b22e725a_58887_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Create your slides in Markdown - click the Slides button to check out the example. At present, the paper has not yet been published, and relevant materials will not be displayed."
+  "description": "Blind face restoration aims to recover high-quality face images from unknown degraded low-quality images. Previous works that are based on geometric or generative priors have achieved impressive performance, but the task remains challenging, particularly when it comes to restoring severely degraded faces. To address this issue, we propose a novel approach TFRGAN, that leverages textual information to improve the restoration of extremely degraded face images. Specifically, we propose to generate a better and more accurate latent code for StyleGAN2 prior via fusing the text and image information in the latent code space. Besides, extracted textual features are used to modulate the decoding features to obtain more realistic and natural facial images with more reasonable details. Experimental results demonstrate the superiority of the proposed method for restoring severely degraded face images."
 }
 </script>
 
@@ -428,7 +434,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8fc9d5863972f3f5f20a283a4824527b.js"></script>
+  <script src="/js/wowchemy-init.min.5e4d72cd69ab8cc019600cf880be6488.js"></script>
 
   
 
@@ -563,6 +569,41 @@
           
           
           
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#pub"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
             
           
 
@@ -674,41 +715,6 @@
           
           
           
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#pub"><span>Publications</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
             
           
 
@@ -803,10 +809,10 @@
     
 
 
-
-
-
-
+  
+    
+    
+  
 
 
 <div class="pub">
@@ -825,25 +831,18 @@
 
 
 
-
-
-
-
-
-
-
-
+  
 
   
   
-
-
+  
 <div class="article-container pt-3">
   <h1>TFRGAN Leveraging Text Information for Blind Face Restoration with Extreme Degradation</h1>
 
   
 
   
+    
 
 
 <div class="article-metadata">
@@ -856,7 +855,10 @@
     
 
   <span class="author-highlighted">
-      ChengXing Xie</span>
+      ChengXing Xie</span>, <span >
+      Qian Ning</span>, <span >
+      Weisheng Dong</span>, <span >
+      Guangming Shi</span>
   </div>
   
   
@@ -885,7 +887,7 @@
 
 </div>
 
-  
+    
 
 
 
@@ -902,8 +904,14 @@
 
 
   
+    
+  
 
 
+
+<a class="btn btn-outline-primary btn-page-header" href="https://openaccess.thecvf.com/content/CVPR2023W/MULA/papers/Xie_TFRGAN_Leveraging_Text_Information_for_Blind_Face_Restoration_With_Extreme_CVPRW_2023_paper.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
 
 
 
@@ -928,20 +936,16 @@
 </div>
 
 
-</div>
-
-
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
-  <div style="position: relative">
-    <img src="/publication/preprint/featured_hu559a5add5185b02575aa8333502ab2cc_220813_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
-    
-  </div>
+  
 </div>
 
 
 
   <div class="article-container">
 
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Blind face restoration aims to recover high-quality face images from unknown degraded low-quality images. Previous works that are based on geometric or generative priors have achieved impressive performance, but the task remains challenging, particularly when it comes to restoring severely degraded faces. To address this issue, we propose a novel approach TFRGAN, that leverages textual information to improve the restoration of extremely degraded face images. Specifically, we propose to generate a better and more accurate latent code for StyleGAN2 prior via fusing the text and image information in the latent code space. Besides, extracted textual features are used to modulate the decoding features to obtain more realistic and natural facial images with more reasonable details. Experimental results demonstrate the superiority of the proposed method for restoring severely degraded face images.</p>
     
 
     
@@ -952,8 +956,8 @@
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
-            <a href="/publication/#3">
-              Preprint
+            <a href="/publication/#1">
+              1
             </a>
           </div>
         </div>
@@ -967,12 +971,15 @@
 
     <div class="space-below"></div>
 
-    <div class="article-style"><div class="alert alert-note">
+    <div class="article-style"><!-- 
+
+<div class="alert alert-note">
   <div>
     Create your slides in Markdown - click the <em>Slides</em> button to check out the example.
   </div>
 </div>
-<p>At present, the paper has not yet been published, and relevant materials will not be displayed.</p>
+ -->
+<!-- At present, the paper has not yet been published, and relevant materials will not be displayed. -->
 </div>
 
     
@@ -1131,8 +1138,25 @@
     <div class="media-body">
       <h5 class="card-title"><a href="https://yitianlian.github.io/">ChengXing Xie</a></h5>
       <h6 class="card-subtitle">Artificial Intelligence Student</h6>
-      <p class="card-text">My research interests include Multi-Modeling, Low-Level Vision.</p>
+      <p class="card-text">My research interests include LLM Agents, Multi-Modeling (VLMs, Diffusion).</p>
       <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/xiechengxing34@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
   
     
     
@@ -1154,6 +1178,8 @@
     
     
     
+      
+    
     
     
     
@@ -1161,8 +1187,40 @@
       
     
     <li>
-      <a href="/uploads/resume.pdf" >
+      <a href="/uploads/wx.png" >
+        <i class="fab fa-weixin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/CV.pdf" >
         <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/uploads/transcript.pdf" >
+        <i class="far fa-file"></i>
       </a>
     </li>
   
@@ -1170,6 +1228,24 @@
 
     </div>
   </div>
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
 
 
   
@@ -1246,7 +1322,7 @@
 
   
   <p class="powered-by copyright-license-text">
-    © 2023 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+    © 2024 Me. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
   </p>
   
 
@@ -1277,7 +1353,7 @@
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://hugoblox.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Hugo Blox Builder</a> — the free, <a href="https://github.com/HugoBlox/hugo-blox-builder" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1289,7 +1365,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+<script src="/js/vendor-bundle.min.938a3a7554cd9f6602290411f64d2617.js"></script>
 
 
 
@@ -1305,6 +1381,8 @@
 
 
 
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
 
 
 
@@ -1355,8 +1433,17 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
   <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
@@ -1373,10 +1460,11 @@
   
 
 
-<script src="/en/js/wowchemy.min.e8ee06ba8371980ffde659871dd593b0.js"></script>
+<script src="/en/js/wowchemy.min.62586ca65ca61821fe707eb9fa6268b7.js"></script>
 
 
 
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
 
 
 
@@ -1409,7 +1497,7 @@
 </div>
 
 
-  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+  <script src="/js/wowchemy-publication.9c0e895144aef5a693008b5c5d450147.js" type="module"></script>
 
 
 
