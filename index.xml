@@ -5,7 +5,7 @@
     <link>https://yitianlian.github.io/</link>
       <atom:link href="https://yitianlian.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>CHENGXING XIE&#39;S WEBSITE</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://yitianlian.github.io/media/icon_hub40895cd8cb45bdb19291010b22e725a_58887_512x512_fill_lanczos_center_3.png</url>
       <title>CHENGXING XIE&#39;S WEBSITE</title>
@@ -35,7 +35,7 @@
     <item>
       <title>Can Large Language Model Agents Simulate Human Trust Behaviors?</title>
       <link>https://yitianlian.github.io/publication/trust/</link>
-      <pubDate>Mon, 11 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yitianlian.github.io/publication/trust/</guid>
       <description>&lt;!-- 
 
@@ -347,7 +347,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-437512869&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-165739248&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -357,7 +357,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-437512869&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-165739248&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
