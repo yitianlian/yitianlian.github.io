@@ -10,7 +10,7 @@ redirect_from:
 
 I am currently an undergraduate student in my senior year at Xidian University, majoring in Computer Science. I'm also an incoming CS PhD student at Tsinghua University.
 
-My past research experience includes working as a research intern at the Shanghai AI Laboratory. I also served as a research assistant at The University of Hong Kong (HKU), under the supervision of [**Prof. Difan Zou**](https://difanzou.github.io/). In addition, I had a visiting research stint at KAUST, where I worked with [**Dr. Guohao Li**](https://ghli.org/) and [**Prof. Bernard Ghanem**](https://www.bernardghanem.com/). Earlier in my academic journey, I interned at SenseTime during my first year of university.
+My past research experience includes working as a research intern at the Shanghai AI Laboratory. I also served as a research assistant at The University of Hong Kong (HKU), under the supervision of [**Prof. Difan Zou**](https://difanzou.github.io/). In addition, I had a visiting research student at KAUST, where I worked with [**Dr. Guohao Li**](https://ghli.org/) and [**Prof. Bernard Ghanem**](https://www.bernardghanem.com/). Earlier in my academic journey, I interned at SenseTime during my first year of university.
 
 Currently, my main research focuses on **Reinforcement Learning** and the application of **Agentic AI** in real-world scenarios. I am particularly interested in how to enhance LLMs to successfully perform tasks in real-world environments that are often noisy and unpredictable. Recently, my work has been centered on **Code LLMs**.
 
