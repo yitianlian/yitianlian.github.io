@@ -2,19 +2,49 @@
 permalink: /
 title: ""
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 # Biography
 
-I am currently an undergraduate student in my senior year at Xidian University, majoring in Computer Science. I'm also an incoming CS PhD student at Tsinghua University.
+I am a first-year Ph.D. candidate in Computer Science at Tsinghua University, under the supervision of Prof. [Hongning Wang](https://www.cs.tsinghua.edu.cn/csen/info/1313/4406.htm). I am also currently interning at Zhipu AI.
 
-My past research experience includes working as a research intern at the Shanghai AI Laboratory. I also served as a research assistant at The University of Hong Kong (HKU), under the supervision of [**Prof. Difan Zou**](https://difanzou.github.io/). In addition, I had a visiting research student at KAUST, where I worked with [**Dr. Guohao Li**](https://ghli.org/) and [**Prof. Bernard Ghanem**](https://www.bernardghanem.com/). Earlier in my academic journey, I interned at SenseTime during my first year of university.
+My research primarily focuses on **LLM RL**, with a particular interest in **Agentic RL** and how to enhance LLMs to effectively perform tasks in real-world environments. Beyond research, I am also passionate about **open-source** contributions and am actively working on **LLM RL infrastructure** projects(e.g. [slime](https://github.com/THUDM/slime), [sglang](https://github.com/sgl-project/sglang)).
 
-Currently, my main research focuses on **Reinforcement Learning** and the application of **Agentic AI** in real-world scenarios. I am particularly interested in how to enhance LLMs to successfully perform tasks in real-world environments that are often noisy and unpredictable. Recently, my work has been centered on **Code LLMs**.
+My past research experience includes working as a research intern at the Shanghai AI Lab. I also served as a research assistant at HKU, under the supervision of [**Prof. Difan Zou**](https://difanzou.github.io/). In addition, I had a visiting research student at KAUST, where I worked with [**Dr. Guohao Li**](https://ghli.org/) and [**Prof. Bernard Ghanem**](https://www.bernardghanem.com/).
 
 If you would like to get in touch with me, feel free to reach out via my email: [**xiechengxing34@gmail.com**](mailto:xiechengxing34@gmail.com) or via [**WeChat**](/images/wechat_QR.png).
+
+
+## Open-Source Contribution
+
+- **Core contributor** of GLM 4.5 ([Technical Report](https://arxiv.org/abs/2508.06471))
+- Main contributor of slime (A LLM post-training framework aiming for RL Scaling. [Repository](https://github.com/THUDM/slime))
+- Contributor of Sglang (Primarily working on RL-related features. [Repository](https://github.com/sgl-project/sglang))
+
+## Education
+ - Doctor of Philosophy (August 2025 -- Now)  
+  [College AI](https://collegeai.tsinghua.edu.cn/), Tsinghua University.  
+  Supervised by Prof. [Hongning Wang](https://www.cs.tsinghua.edu.cn/csen/info/1313/4406.htm).  
+
+ - Bachelor (September 2021 -- June 2025)  
+  School of Computer Science and Technology, Xidian University, Xi'an, China.  
+
+
+## Selected Publication
+
+- **[Can Large Language Model Agents Simulate Human Trust Behavior?](https://arxiv.org/abs/2402.04559)**
+  - **Authors:** [Chengxing Xie](#), Canyu Chen, Feiran Jia, Ziyu Ye, Shiyang Lai, Kai Shu, Jindong Gu, Adel Bibi, Ziniu Hu, David Jurgens, James Evans, Philip Torr, Bernard Ghanem, Guohao Li
+  - Accepted in **NeurIPS 2024**, with **100+** citations. The code is available [here](https://github.com/camel-ai/agent-trust).
+
+- **[GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models](https://www.arxiv.org/pdf/2508.06471)**
+  - I'm one of the **core contributors** of GLM-4.5.
+  - GLM-4.5 is an SOTA MoE LLM with 355B parameters, achieving top performance on agentic, reasoning, and coding tasks, while outperforming competitors with fewer parameters.
+
+- **[SWE-Fixer: Training Open-Source LLMs for Effective and Efficient GitHub Issue Resolution](https://arxiv.org/abs/2501.05040)**
+  - **Authors:** [Chengxing Xie](#), Bowen Li, Chang Gao, He Du, Wai Lam, Difan Zou, Kai Chen
+  - Accepted in **ACL 2025 Findings**. The code is available [here](https://github.com/InternLM/SWE-Fixer?tab=readme-ov-file).
 
 <!-- This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
 
@@ -27,11 +57,11 @@ Many of the features of dynamic content management systems (like Wordpress) can 
 Getting started
 ======
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+2. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
+3. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+4. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+5. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
+6. Check status by going to the repository settings, in the "GitHub pages" section
 
 Site-wide configuration
 ------
