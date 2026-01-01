@@ -8,7 +8,7 @@ redirect_from:
 ---
 # Biography
 
-I am a first-year Ph.D. candidate in Computer Science at Tsinghua University, under the supervision of Prof. [Hongning Wang](https://www.cs.tsinghua.edu.cn/csen/info/1313/4406.htm). I am also currently interning at Zhipu AI.
+I am a first-year Ph.D. student in Computer Science at Tsinghua University, under the supervision of Prof. [Hongning Wang](https://www.cs.tsinghua.edu.cn/csen/info/1313/4406.htm). I am also currently interning at Zhipu AI.
 
 My research primarily focuses on **LLM RL**, with a particular interest in **Agentic RL** and how to enhance LLMs to effectively perform tasks in real-world environments. Beyond research, I am also passionate about **open-source** contributions and am actively working on **LLM RL infrastructure** projects(e.g. [slime](https://github.com/THUDM/slime), [sglang](https://github.com/sgl-project/sglang)).
 
