@@ -47,8 +47,9 @@ When you are initially working on your website, it is very useful to be able to 
     ```
     then try run `bundle install` again. If succeeded, you should see a folder called `vendor` and open `.gitignore` then add `vendor` inside it.
 
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-    You may also try `bundle exec jekyll serve -l -H localhost` to ensure jekyll to use specific dependencies on your own local machine.
+1. Run `bundle exec jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+    This repository includes `.ruby-version` (`3.4.1`) so Ruby version managers can auto-switch to the expected runtime.
+    You can also run `./run_command.sh`, which prefers `~/.rubies/ruby-3.4.1` when available.
 
 If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
 

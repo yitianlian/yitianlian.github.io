@@ -8,4 +8,4 @@ redirect_from:
 ---
 
 {% include base_path %}
-Feel free to view my [CV](/files/Chengxing_Xie's%20CV.pdf) for more details about my background.
+Feel free to view my [CV](/files/Chengxing_Xie_cv.pdf) for more details about my background.
