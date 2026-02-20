@@ -20,7 +20,7 @@ If you would like to get in touch with me, feel free to reach out via email: [**
 
 ## Open-Source Contribution
 
-- **Core contributor** of **GLM-5**([Technical Report](https://www.arxiv.org/pdf/2602.15763))
+- **Core contributor** of **GLM-5** ([Technical Report](https://www.arxiv.org/pdf/2602.15763))
 - **Core contributor** of **GLM-4.5** ([Technical Report](https://arxiv.org/abs/2508.06471))
 - **Core contributor** of **slime** (LLM post-training framework for scalable RL. [Repository](https://github.com/THUDM/slime))
 - Contributor of **SGLang** (primarily working on RL-related features. [Repository](https://github.com/sgl-project/sglang))
